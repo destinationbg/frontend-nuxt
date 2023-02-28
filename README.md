@@ -9,7 +9,7 @@
 ## Хранилища
 
 1. Част първа - [Статично съдържание](https://github.com/placesbg/static-contents) за забележителностите
-1. Част втора - [Laravel с Vue 3](https://github.com/placesbg/backend-laravel) за административен панел и REST API
+1. Част втора - [Laravel](https://github.com/placesbg/backend-laravel) за административен панел и REST API
 1. Част трета - [Nuxt 3](https://github.com/placesbg/frontend-nuxt) за публичната част на сайта
 
 ## Технологии
