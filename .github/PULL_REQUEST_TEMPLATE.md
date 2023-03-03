@@ -1,6 +1,6 @@
 <!--
 Моля, прочетете насоките за пускане на Pull Request:
-https://github.com/placesbg/frontend-nuxt/blob/main/.github/CONTRIBUTING.md#стъпка-4---подаване-на-промените-към-нашето-хранилище-pull-request
+https://github.com/destinationbg/frontend-nuxt/blob/main/.github/CONTRIBUTING.md#стъпка-4---подаване-на-промените-към-нашето-хранилище-pull-request
 -->
 
 <!-- PULL REQUEST TEMPLATE -->
@@ -26,7 +26,7 @@ https://github.com/placesbg/frontend-nuxt/blob/main/.github/CONTRIBUTING.md#ст
 
 - [ ] Пуска се към `dev` branch-a
 - [ ] Когато се разрешава дадено issue, то е реферирано още в заглавието на Pull Request-a (например `fix #xxx[,#xxx]`, където "xxx" е номера на issue-то)
-- [ ] Всички тестове минават без грешки: https://github.com/placesbg/frontend-nuxt/blob/main/.github/CONTRIBUTING.md#стъпка-2---тестване-на-кода
+- [ ] Всички тестове минават без грешки: https://github.com/destinationbg/frontend-nuxt/blob/main/.github/CONTRIBUTING.md#стъпка-2---тестване-на-кода
 - [ ] Включени са нови или актуализирани тестове
 
 Ако добавяте **нова функционалност**:
