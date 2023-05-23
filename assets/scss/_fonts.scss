@@ -1,0 +1,47 @@
+@font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Akrobat';
+    src: url('/fonts/Akrobat/Akrobat-Regular.eot');
+    src: url('/fonts/Akrobat/Akrobat-Regular.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Akrobat/Akrobat-Regular.woff2') format('woff2'), url('/fonts/Akrobat/Akrobat-Regular.woff') format('woff'),
+        url('/fonts/Akrobat/Akrobat-Regular.ttf') format('truetype'),
+        url('/fonts/Akrobat/Akrobat-Regular.svg#Akrobat-Regular') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 600;
+    font-style: normal;
+    font-family: 'Akrobat';
+    src: url('/fonts/Akrobat/Akrobat-SemiBold.eot');
+    src: url('/fonts/Akrobat/Akrobat-SemiBold.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Akrobat/Akrobat-SemiBold.woff2') format('woff2'), url('/fonts/Akrobat/Akrobat-SemiBold.woff') format('woff'),
+        url('/fonts/Akrobat/Akrobat-SemiBold.ttf') format('truetype'),
+        url('/fonts/Akrobat/Akrobat-SemiBold.svg#Akrobat-SemiBold') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Akrobat';
+    src: url('/fonts/Akrobat/Akrobat-Bold.eot');
+    src: url('/fonts/Akrobat/Akrobat-Bold.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Akrobat/Akrobat-Bold.woff2') format('woff2'), url('/fonts/Akrobat/Akrobat-Bold.woff') format('woff'),
+        url('/fonts/Akrobat/Akrobat-Bold.ttf') format('truetype'),
+        url('/fonts/Akrobat/Akrobat-Bold.svg#Akrobat-Bold') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 800;
+    font-style: normal;
+    font-family: 'Akrobat';
+    src: url('/fonts/Akrobat/Akrobat-ExtraBold.eot');
+    src: url('/fonts/Akrobat/Akrobat-ExtraBold.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Akrobat/Akrobat-ExtraBold.woff2') format('woff2'), url('/fonts/Akrobat/Akrobat-ExtraBold.woff') format('woff'),
+        url('/fonts/Akrobat/Akrobat-ExtraBold.ttf') format('truetype'),
+        url('/fonts/Akrobat/Akrobat-ExtraBold.svg#Akrobat-ExtraBold') format('svg');
+    font-display: swap;
+}

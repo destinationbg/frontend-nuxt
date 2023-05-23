@@ -1,0 +1,311 @@
+html,
+body {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: $white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @include font-size(16px);
+
+    color: $slate-700;
+    font-weight: 400;
+    font-family: $font-base;
+    line-height: 1;
+}
+
+:root {
+    font-variant-ligatures: none;
+    font-feature-settings: 'ss01' on, 'pnum' on, 'lnum' on, 'salt' on, 'liga' off;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+*,
+a,
+button,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+button,
+input,
+textarea,
+select {
+    font-weight: 400;
+    font-family: $font-base, sans-serif;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button,
+input[type='submit'] {
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+textarea {
+    overflow: hidden;
+    resize: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 600;
+    font-family: $font-base, sans-serif;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    user-select: none;
+}
+
+strong {
+    font-weight: 600;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $slate-200;
+}
+
+dl,
+dt,
+dd {
+    margin: 0;
+}
+
+table {
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $white;
+
+    thead {
+        tr {
+            background-color: $slate-600;
+            color: $white;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: $slate-50;
+            }
+        }
+    }
+
+    tr {
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        border-width: 1px;
+        border-style: solid;
+        white-space: nowrap;
+
+        a {
+            color: $blue-600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    th {
+        border-color: $slate-700;
+        font-weight: 600;
+    }
+
+    td {
+        border-color: $slate-200;
+    }
+}
+
+.environment {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100vw;
+    height: 30px;
+    border-width: 1px 0 0;
+    border-style: solid;
+    pointer-events: none;
+    user-select: none;
+
+    &.local {
+        border-color: $emerald-500;
+
+        span {
+            background-color: $emerald-500;
+        }
+    }
+
+    &.dev {
+        border-color: $indigo-500;
+
+        span {
+            background-color: $indigo-500;
+        }
+    }
+
+    span {
+        @include font-size(14px);
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 10px 5px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        color: $white;
+        font-weight: 800;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}
+
+.dual-box,
+.triple-box,
+.quadruple-box {
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 20px;
+}
+
+.dual-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.triple-box {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quadruple-box {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.title {
+    padding: 0 0 30px;
+
+    &.center {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0 0 60px;
+
+        h2,
+        p {
+            text-align: center;
+        }
+
+        p {
+            padding: 20px 0 0;
+        }
+    }
+
+    h2 {
+        @include font-size(36px);
+
+        color: $slate-900;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    p {
+        @include font-size(20px);
+
+        padding: 10px 0 0;
+        color: $slate-500;
+        line-height: 1.6;
+    }
+}
+
+@import 'responsive/_base';

@@ -1,0 +1,34 @@
+// General
+
+@import '!/@flaticon/flaticon-uicons/css/regular/all';
+@import '!/@flaticon/flaticon-uicons/css/brands/all';
+@import '_fonts';
+@import '_mixins';
+@import '_variables';
+
+// Animations
+
+// @import 'animations/...';
+
+// Components
+
+@import 'components/_base';
+@import 'components/overlay';
+@import 'components/page-footer';
+@import 'components/page-header';
+
+// Sections
+
+@import 'sections/top-section';
+
+// Pages
+
+@import 'pages/about';
+@import 'pages/contacts';
+@import 'pages/donate';
+@import 'pages/error';
+@import 'pages/explore';
+@import 'pages/homepage';
+@import 'pages/legal';
+@import 'pages/map';
+@import 'pages/trails';

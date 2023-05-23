@@ -1,0 +1,13 @@
+*.log
+.env
+.eslintcache
+.idea
+.nuxt
+.output
+.stylelintcache
+.vscode
+dist
+node_modules
+npm-debug.log*
+nuxt.d.ts
+pnpm-debug.log*

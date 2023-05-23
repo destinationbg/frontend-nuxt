@@ -1,0 +1,169 @@
+@use 'sass:math';
+
+// Screen media queries
+
+// 4k resolution devices
+@mixin screen-uhd {
+    @media only screen and (width <= 3840px) {
+        @content;
+    }
+}
+
+@function uhd($target) {
+    $context: (3840 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// 2k resolution devices
+@mixin screen-qhd {
+    @media only screen and (width <= 2560px) {
+        @content;
+    }
+}
+
+@function qhd($target) {
+    $context: (2560 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Extra large devices
+@mixin screen-xl {
+    @media only screen and (width <= 1920px) {
+        @content;
+    }
+}
+
+@function xl($target) {
+    $context: (1920 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Large devices
+@mixin screen-lg {
+    @media only screen and (width <= 1440px) {
+        @content;
+    }
+}
+
+@function lg($target) {
+    $context: (1440 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Medium devices
+@mixin screen-md {
+    @media only screen and (width <= 1280px) {
+        @content;
+    }
+}
+
+@function md($target) {
+    $context: (1280 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Small devices
+@mixin screen-sm {
+    @media only screen and (width <= 1024px) {
+        @content;
+    }
+}
+
+@function sm($target) {
+    $context: (1024 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Extra small devices
+@mixin screen-xs {
+    @media only screen and (width <= 640px) {
+        @content;
+    }
+}
+
+@function xs($target) {
+    $context: (640 * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// For custom screen size purpose
+@mixin screen-custom($bp) {
+    @media only screen and (width <= $bp) {
+        @content;
+    }
+}
+
+@function custom($target, $size) {
+    $context: ($size * 0.01) * 1px;
+
+    @return math.div($target, $context) * 1vw;
+}
+
+// Placeholders
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin placeholder-focus {
+    &:focus::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:focus:-moz-placeholder {
+        @content;
+    }
+
+    &:focus::-moz-placeholder {
+        @content;
+    }
+
+    &:focus:-ms-input-placeholder {
+        @content;
+    }
+}
+
+// Autofill
+
+@mixin autofill {
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        @content;
+    }
+}
+
+// Rem for font-size
+
+@function calculateRem($size) {
+    $rem: math.div($size, 16px);
+
+    @return $rem * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}

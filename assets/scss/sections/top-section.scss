@@ -1,0 +1,31 @@
+.top-section {
+    padding: 60px 0;
+    background-color: $slate-50;
+
+    .subtitle {
+        @include font-size(22px);
+
+        padding: 0 0 15px;
+        color: $blue-700;
+        font-weight: 600;
+    }
+
+    h1 {
+        @include font-size(46px);
+
+        color: $slate-900;
+        font-weight: 700;
+    }
+
+    p {
+        @include font-size(24px);
+
+        width: 100%;
+        max-width: 1280px;
+        padding: 25px 0 0;
+        color: $slate-600;
+        line-height: 1.4;
+    }
+}
+
+@import 'responsive/top-section';
