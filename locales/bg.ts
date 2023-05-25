@@ -19,14 +19,26 @@ export default {
             '503': 'Услугата е недостъпна!'
         },
         buttons: {
+            back: 'Назад',
+            backLabel: 'Предходна страница',
             bookmarkAdd: 'Запазване като отметка',
             bookmarkRemove: 'Премахване на отметката',
             bookmarks: 'Отметки',
             change: 'Промяна',
             copy: 'Копиране',
+            favoriteAdd: 'Добавяне в любими',
+            favoriteRemove: 'Премахване от любими',
             location: 'Споделяне на локация',
             menu: 'Навигация',
-            search: 'Търсене'
+            next: 'Напред',
+            nextLabel: 'Следваща страница',
+            photoPurchase: 'Закупуване на снимката',
+            photosAll: 'Всички снимки',
+            search: 'Търсене',
+            share: 'Споделяне',
+            viewAsGrid: 'Преглед като решетка',
+            viewAsList: 'Преглед като списък',
+            viewAsMap: 'Преглед като карта'
         },
         footer: {
             copyright: '&copy; {year} {name} - всички права запазени.',

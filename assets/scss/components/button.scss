@@ -1,0 +1,184 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    white-space: nowrap;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+
+    &.primary {
+        border-radius: 54px;
+        background-color: $blue-500;
+        transition: all 200ms linear;
+
+        &:hover {
+            background-color: $blue-600;
+        }
+
+        &.big {
+            gap: 15px;
+            height: 60px;
+            padding: 0 30px;
+
+            i,
+            span {
+                @include font-size(24px);
+            }
+
+            i {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &.small {
+            gap: 10px;
+            height: 40px;
+            padding: 0 20px;
+
+            i,
+            span {
+                @include font-size(18px);
+            }
+
+            i {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        &.green {
+            background-color: $lime-600;
+
+            &:hover {
+                background-color: $lime-700;
+            }
+
+            i,
+            span {
+                color: $lime-50;
+            }
+        }
+
+        &.gray {
+            background-color: $slate-200;
+
+            &:hover {
+                background-color: $slate-300;
+            }
+
+            i,
+            span {
+                color: $slate-700;
+            }
+        }
+
+        i,
+        span {
+            display: block;
+            color: $blue-50;
+            font-weight: 700;
+        }
+    }
+
+    &.secondary {
+        border-width: 1px;
+        border-style: solid;
+        border-color: $slate-300;
+        border-radius: 12px;
+        background-color: $white;
+        box-shadow: 0 2px 4px rgba($blue-900, 0.1);
+        transition: all 200ms linear;
+
+        &[disabled] {
+            border-color: $slate-300;
+            background-color: $slate-200;
+
+            &:hover {
+                background-color: $slate-200;
+            }
+
+            i,
+            span {
+                color: $slate-400;
+            }
+        }
+
+        &:hover {
+            background-color: $slate-100;
+        }
+
+        &.big {
+            gap: 15px;
+            height: 50px;
+            padding: 0 20px;
+
+            i,
+            span {
+                @include font-size(22px);
+            }
+
+            i {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        &.small {
+            gap: 10px;
+            height: 40px;
+            padding: 0 15px;
+
+            i,
+            span {
+                @include font-size(18px);
+            }
+
+            i {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        i,
+        span {
+            display: block;
+            color: $slate-600;
+            font-weight: 700;
+        }
+    }
+
+    &.borderless {
+        gap: 10px;
+        height: 30px;
+
+        &:hover {
+            i,
+            span {
+                color: $lime-900;
+            }
+        }
+
+        i,
+        span {
+            @include font-size(22px);
+
+            display: block;
+            color: $lime-800;
+            font-weight: 600;
+            transition: all 200ms linear;
+        }
+
+        i {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+@import 'responsive/button';

@@ -273,6 +273,31 @@ table {
     padding: 0 100px;
 }
 
+.demo {
+    padding: 40px 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+}
+
 .title {
     padding: 0 0 30px;
 

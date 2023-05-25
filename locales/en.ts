@@ -19,14 +19,26 @@ export default {
             '503': 'Service Unavailable'
         },
         buttons: {
+            back: 'Back',
+            backLabel: 'Previous Page',
             bookmarkAdd: 'Bookmark it',
             bookmarkRemove: 'Remove Bookmark',
             bookmarks: 'Bookmarks',
             change: 'Change',
             copy: 'Copy',
+            favoriteAdd: 'Add to Favorites',
+            favoriteRemove: 'Remove from Favourites',
             location: 'Location Sharing',
             menu: 'Navigation',
-            search: 'Search'
+            next: 'Next',
+            nextLabel: 'Next Page',
+            photoPurchase: 'Purchase the Photo',
+            photosAll: 'All Photos',
+            search: 'Search',
+            share: 'Share',
+            viewAsGrid: 'View as Grid',
+            viewAsList: 'View as List',
+            viewAsMap: 'View as Map'
         },
         footer: {
             copyright: '&copy; {year} {name} - All Rights Reserved.',

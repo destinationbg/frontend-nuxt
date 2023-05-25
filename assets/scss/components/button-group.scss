@@ -1,0 +1,29 @@
+.button-group {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $slate-300;
+    border-radius: 6px;
+    background-color: $slate-300;
+    box-shadow: 0 2px 4px rgba($blue-900, 0.1);
+
+    .button {
+        &.secondary {
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+
+            &.big {
+                width: 60px;
+                height: 60px;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@import 'responsive/button-group';

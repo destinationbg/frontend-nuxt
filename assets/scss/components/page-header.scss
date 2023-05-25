@@ -40,13 +40,14 @@
 
     .brand,
     aside {
-        width: 250px;
-    }
-
-    .brand {
         display: flex;
         flex: 0 0 auto;
         align-items: center;
+        width: 210px;
+    }
+
+    .brand {
+        justify-content: flex-start;
 
         a {
             position: relative;
@@ -152,6 +153,8 @@
     }
 
     aside {
+        justify-content: flex-end;
+
         ul {
             display: flex;
             flex: 0 0 auto;

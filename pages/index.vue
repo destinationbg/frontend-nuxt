@@ -7,6 +7,8 @@
                 </div>
             </div>
         </section>
+
+        <Elements />
     </main>
 </template>
 
