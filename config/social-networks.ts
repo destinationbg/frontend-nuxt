@@ -14,7 +14,7 @@ const socialNetworks: ISocialNetworks[] = [
         title: 'Instagram'
     },
     {
-        link: import.meta.env.VITE_APP_PROJECT_GITHUB,
+        link: `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}`,
         title: 'GitHub'
     },
     {
