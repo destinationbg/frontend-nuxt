@@ -1,0 +1,120 @@
+.stars {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &.big,
+    &.big-vertical {
+        $width: 24px;
+        $height: 20px;
+        $size: ($width * 5);
+
+        .icons-container {
+            width: $size;
+            height: $height;
+
+            &::before {
+                width: $size;
+                height: $height;
+                background-size: $width;
+            }
+        }
+
+        .icons {
+            width: $size;
+            height: $height;
+
+            &::before {
+                height: $height;
+                background-size: $width;
+            }
+        }
+    }
+
+    &.big-vertical {
+        flex-direction: column;
+
+        .reviews {
+            color: $slate-800;
+        }
+    }
+
+    &.small {
+        $width: 14px;
+        $height: 12px;
+        $size: ($width * 5);
+
+        .icons-container {
+            width: $size;
+            height: $height;
+
+            &::before {
+                width: $size;
+                height: $height;
+                background-size: $width;
+            }
+        }
+
+        .icons {
+            width: $size;
+            height: $height;
+
+            &::before {
+                height: $height;
+                background-size: $width;
+            }
+        }
+    }
+
+    .icons-container {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            display: block;
+            background-image: url('~/assets/images/icon-star-border.svg');
+            background-repeat: repeat-x;
+        }
+    }
+
+    .icons {
+        position: absolute;
+        display: block;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: block;
+            background-image: url('~/assets/images/icon-star-solid.svg');
+            background-repeat: repeat-x;
+        }
+    }
+
+    .number {
+        @include font-size(84px);
+
+        color: $slate-800;
+        font-weight: 700;
+    }
+
+    .reviews {
+        @include font-size(20px);
+
+        color: $slate-500;
+        font-weight: 600;
+    }
+}
+
+@import 'responsive/stars';

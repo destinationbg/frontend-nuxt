@@ -18,6 +18,10 @@ export default {
             '500': 'Сървърна грешка!',
             '503': 'Услугата е недостъпна!'
         },
+        rating: {
+            title: 'Рейтинг {rating} от {max_rating}',
+            reviews: '{rating} от {reviews} отзива'
+        },
         buttons: {
             back: 'Назад',
             backLabel: 'Предходна страница',

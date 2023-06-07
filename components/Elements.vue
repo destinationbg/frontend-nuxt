@@ -129,10 +129,45 @@
                     <i class="fi fi-rr-arrow-alt-right" />
                 </button>
             </div>
+
+            <div class="rating">
+                <Rating size="big" :rating="3.5" :max-rating="5" />
+
+                <Rating size="small" :rating="2.3" :max-rating="5" />
+
+                <Rating size="big" :rating="4.1" :max-rating="5">
+                    <template #suffix>
+                        <div class="reviews">
+                            {{
+                                t('general.rating.reviews', {
+                                    rating: 4.1,
+                                    reviews: (12345).toLocaleString(locale, { minimumFractionDigits: 0 })
+                                })
+                            }}
+                        </div>
+                    </template>
+                </Rating>
+
+                <Rating size="big-vertical" :rating="4.1" :max-rating="5">
+                    <template #prefix>
+                        <div class="number">4.1</div>
+                    </template>
+                    <template #suffix>
+                        <div class="reviews">
+                            {{
+                                t('general.rating.reviews', {
+                                    rating: 4.1,
+                                    reviews: (12345).toLocaleString(locale, { minimumFractionDigits: 0 })
+                                })
+                            }}
+                        </div>
+                    </template>
+                </Rating>
+            </div>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
-    const { t } = useI18n()
+    const { t, locale } = useI18n()
 </script>

@@ -18,6 +18,10 @@ export default {
             '500': 'Server Error',
             '503': 'Service Unavailable'
         },
+        rating: {
+            title: 'Rating {rating} out of {max_rating}',
+            reviews: '{rating} from {reviews} reviews'
+        },
         buttons: {
             back: 'Back',
             backLabel: 'Previous Page',

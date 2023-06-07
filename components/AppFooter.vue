@@ -26,9 +26,9 @@
                             :title="item.title"
                             target="_blank"
                             rel="noopener"
-                            :class="`social-${item.title.toLocaleLowerCase()}`"
+                            :class="`social-${item.title.toLowerCase()}`"
                         >
-                            <i :class="`fi fi-brands-${item.title.toLocaleLowerCase()}`" />
+                            <i :class="`fi fi-brands-${item.title.toLowerCase()}`" />
                         </a>
                     </li>
                 </ul>
