@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     },
     modules: [
         // 'nuxt-gtag',
-        '@sidebase/nuxt-auth',
+        // '@sidebase/nuxt-auth',
         '@vueuse/nuxt',
         '@nuxtjs/i18n',
         [
@@ -45,10 +45,10 @@ export default defineNuxtConfig({
             }
         ]
     ],
-    auth: {
-        origin: process.env.VITE_APP_URL,
-        enableGlobalAppMiddleware: true
-    },
+    // auth: {
+    //     origin: process.env.VITE_APP_URL,
+    //     enableGlobalAppMiddleware: true
+    // },
     i18n: {
         baseUrl: process.env.VITE_APP_URL,
         locales: localeDetails,
