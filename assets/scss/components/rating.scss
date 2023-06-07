@@ -1,4 +1,4 @@
-.stars {
+.rating {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -9,7 +9,7 @@
         $height: 20px;
         $size: ($width * 5);
 
-        .icons-container {
+        .stars-container {
             width: $size;
             height: $height;
 
@@ -44,7 +44,7 @@
         $height: 12px;
         $size: ($width * 5);
 
-        .icons-container {
+        .stars-container {
             width: $size;
             height: $height;
 
@@ -66,7 +66,7 @@
         }
     }
 
-    .icons-container {
+    .stars-container {
         position: relative;
 
         &::before {
@@ -117,4 +117,4 @@
     }
 }
 
-@import 'responsive/stars';
+@import 'responsive/rating';

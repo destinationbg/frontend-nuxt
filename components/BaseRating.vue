@@ -1,9 +1,9 @@
 <template>
-    <div :class="['stars', size]">
+    <div :class="['rating', size]">
         <slot name="prefix" />
 
         <div
-            class="icons-container"
+            class="stars-container"
             :title="t('general.rating.title', { rating: rating.toFixed(1), max_rating: maxRating.toFixed(1) })"
         >
             <div class="icons" :style="`width: ${percentage.toFixed(0)}%`"></div>

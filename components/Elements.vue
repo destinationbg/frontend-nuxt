@@ -3,139 +3,175 @@
         <div class="container">
             <div class="buttons">
                 <div class="group">
-                    <button class="button primary big">
-                        <i class="fi fi-rr-heart" />
-                        <span>{{ t('general.buttons.favoriteAdd') }}</span>
-                    </button>
+                    <BaseButton type="button" size="big" variant="primary">
+                        <template #icon-left>
+                            <i class="fi fi-rr-heart" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.favoriteAdd') }}</span>
+                        </template>
+                    </BaseButton>
 
-                    <button class="button primary small">
-                        <i class="fi fi-rr-heart" />
-                        <span>{{ t('general.buttons.favoriteAdd') }}</span>
-                    </button>
+                    <BaseButton type="button" size="small" variant="primary">
+                        <template #icon-left>
+                            <i class="fi fi-rr-heart" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.favoriteAdd') }}</span>
+                        </template>
+                    </BaseButton>
                 </div>
 
                 <div class="group">
-                    <button class="button primary green big">
-                        <i class="fi fi-rr-shopping-cart-add" />
-                        <span>{{ t('general.buttons.photoPurchase') }}</span>
-                    </button>
+                    <BaseButton type="button" size="big" variant="primary" color="green">
+                        <template #icon-left>
+                            <i class="fi fi-rr-shopping-cart-add" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.photoPurchase') }}</span>
+                        </template>
+                    </BaseButton>
 
-                    <button class="button primary green small">
-                        <i class="fi fi-rr-shopping-cart-add" />
-                        <span>{{ t('general.buttons.photoPurchase') }}</span>
-                    </button>
+                    <BaseButton type="button" size="small" variant="primary" color="green">
+                        <template #icon-left>
+                            <i class="fi fi-rr-shopping-cart-add" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.photoPurchase') }}</span>
+                        </template>
+                    </BaseButton>
                 </div>
 
                 <div class="group">
-                    <button class="button primary gray big">
-                        <i class="fi fi-rr-picture" />
-                        <span>{{ t('general.buttons.photosAll') }}</span>
-                    </button>
+                    <BaseButton type="button" size="big" variant="primary" color="gray">
+                        <template #icon-left>
+                            <i class="fi fi-rr-picture" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.photosAll') }}</span>
+                        </template>
+                    </BaseButton>
 
-                    <button class="button primary gray small">
-                        <i class="fi fi-rr-picture" />
-                        <span>{{ t('general.buttons.photosAll') }}</span>
-                    </button>
+                    <BaseButton type="button" size="small" variant="primary" color="gray">
+                        <template #icon-left>
+                            <i class="fi fi-rr-picture" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.photosAll') }}</span>
+                        </template>
+                    </BaseButton>
                 </div>
 
                 <div class="group">
-                    <button class="button secondary big">
-                        <i class="fi fi-rr-arrow-alt-left" />
-                        <span>{{ t('general.buttons.back') }}</span>
-                    </button>
+                    <BaseButton type="button" size="big" variant="secondary">
+                        <template #icon-left>
+                            <i class="fi fi-rr-arrow-alt-left" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.back') }}</span>
+                        </template>
+                    </BaseButton>
 
-                    <button class="button secondary small">
-                        <i class="fi fi-rr-arrow-alt-left" />
-                        <span>{{ t('general.buttons.back') }}</span>
-                    </button>
+                    <BaseButton type="button" size="small" variant="secondary">
+                        <template #icon-left>
+                            <i class="fi fi-rr-arrow-alt-left" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.back') }}</span>
+                        </template>
+                    </BaseButton>
                 </div>
 
                 <div class="group">
-                    <button class="button borderless">
-                        <i class="fi fi-rr-share" />
-                        <span>{{ t('general.buttons.share') }}</span>
-                    </button>
+                    <BaseButton type="button" variant="borderless">
+                        <template #icon-left>
+                            <i class="fi fi-rr-share" />
+                        </template>
+                        <template #text>
+                            <span>{{ t('general.buttons.share') }}</span>
+                        </template>
+                    </BaseButton>
                 </div>
 
                 <div class="group">
                     <div class="button-group">
-                        <button
-                            class="button secondary big disabled"
+                        <BaseButton
+                            type="button"
+                            size="big"
+                            variant="secondary"
                             :title="t('general.buttons.viewAsList')"
-                            :area-label="t('general.buttons.viewAsList')"
                             disabled
                         >
-                            <i class="fi fi-rr-menu-burger" />
-                        </button>
-                        <button
-                            class="button secondary big"
-                            :title="t('general.buttons.viewAsGrid')"
-                            :area-label="t('general.buttons.viewAsGrid')"
-                        >
-                            <i class="fi fi-rr-apps" />
-                        </button>
-                        <button
-                            class="button secondary big"
-                            :title="t('general.buttons.viewAsMap')"
-                            :area-label="t('general.buttons.viewAsMap')"
-                        >
-                            <i class="fi fi-rr-map" />
-                        </button>
+                            <template #icon-left>
+                                <i class="fi fi-rr-menu-burger" />
+                            </template>
+                        </BaseButton>
+
+                        <BaseButton type="button" size="big" variant="secondary" :title="t('general.buttons.viewAsGrid')">
+                            <template #icon-left>
+                                <i class="fi fi-rr-apps" />
+                            </template>
+                        </BaseButton>
+
+                        <BaseButton type="button" size="big" variant="secondary" :title="t('general.buttons.viewAsMap')">
+                            <template #icon-left>
+                                <i class="fi fi-rr-map" />
+                            </template>
+                        </BaseButton>
                     </div>
                 </div>
             </div>
 
             <div class="pagination">
-                <button
-                    class="button secondary big disabled"
-                    :title="t('general.buttons.backLabel')"
-                    :area-label="t('general.buttons.backLabel')"
-                    disabled
-                >
-                    <i class="fi fi-rr-arrow-alt-left" />
-                    <span>{{ t('general.buttons.back') }}</span>
-                </button>
+                <BaseButton type="button" size="big" variant="secondary" :title="t('general.buttons.backLabel')" disabled>
+                    <template #icon-left>
+                        <i class="fi fi-rr-arrow-alt-left" />
+                    </template>
+                    <template #text>
+                        <span>{{ t('general.buttons.back') }}</span>
+                    </template>
+                </BaseButton>
 
                 <div class="pages-container">
-                    <div>
-                        <button class="button secondary big disabled" disabled>
+                    <BaseButton type="button" size="big" variant="secondary" disabled>
+                        <template #text>
                             <span>1</span>
-                        </button>
-                    </div>
+                        </template>
+                    </BaseButton>
 
                     <div class="divider">...</div>
 
-                    <div v-for="(item, index) in [3, 4, 5]" :key="index">
-                        <button class="button secondary big">
+                    <BaseButton v-for="(item, index) in [3, 4, 5]" :key="index" type="button" size="big" variant="secondary">
+                        <template #text>
                             <span>{{ item }}</span>
-                        </button>
-                    </div>
+                        </template>
+                    </BaseButton>
 
                     <div class="divider">...</div>
 
-                    <div>
-                        <button class="button secondary big">
+                    <BaseButton type="button" size="big" variant="secondary">
+                        <template #text>
                             <span>7</span>
-                        </button>
-                    </div>
+                        </template>
+                    </BaseButton>
                 </div>
 
-                <button
-                    class="button secondary big"
-                    :title="t('general.buttons.nextLabel')"
-                    :area-label="t('general.buttons.nextLabel')"
-                >
-                    <span>{{ t('general.buttons.next') }}</span>
-                    <i class="fi fi-rr-arrow-alt-right" />
-                </button>
+                <BaseButton type="button" size="big" variant="secondary" :title="t('general.buttons.nextLabel')" disabled>
+                    <template #text>
+                        <span>{{ t('general.buttons.next') }}</span>
+                    </template>
+                    <template #icon-right>
+                        <i class="fi fi-rr-arrow-alt-right" />
+                    </template>
+                </BaseButton>
             </div>
 
-            <div class="rating">
-                <Rating size="big" :rating="3.5" :max-rating="5" />
+            <div class="ratings">
+                <BaseRating size="big" :rating="3.5" :max-rating="5" />
 
-                <Rating size="small" :rating="2.3" :max-rating="5" />
+                <BaseRating size="small" :rating="2.3" :max-rating="5" />
 
-                <Rating size="big" :rating="4.1" :max-rating="5">
+                <BaseRating size="big" :rating="4.1" :max-rating="5">
                     <template #suffix>
                         <div class="reviews">
                             {{
@@ -146,9 +182,9 @@
                             }}
                         </div>
                     </template>
-                </Rating>
+                </BaseRating>
 
-                <Rating size="big-vertical" :rating="4.1" :max-rating="5">
+                <BaseRating size="big-vertical" :rating="4.1" :max-rating="5">
                     <template #prefix>
                         <div class="number">4.1</div>
                     </template>
@@ -162,7 +198,7 @@
                             }}
                         </div>
                     </template>
-                </Rating>
+                </BaseRating>
             </div>
         </div>
     </section>
