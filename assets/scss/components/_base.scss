@@ -122,6 +122,8 @@ figure {
 }
 
 img {
+    max-width: 100%;
+    height: auto;
     user-select: none;
 }
 
@@ -274,12 +276,18 @@ table {
 }
 
 .demo {
-    padding: 40px 0;
+    padding: 70px 0;
 
     .container {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 70px;
+    }
+
+    .section-headings {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .buttons {
@@ -302,41 +310,6 @@ table {
         gap: 20px;
         align-items: center;
         justify-content: center;
-    }
-}
-
-.title {
-    padding: 0 0 30px;
-
-    &.center {
-        width: 1000px;
-        margin: 0 auto;
-        padding: 0 0 60px;
-
-        h2,
-        p {
-            text-align: center;
-        }
-
-        p {
-            padding: 20px 0 0;
-        }
-    }
-
-    h2 {
-        @include font-size(36px);
-
-        color: $slate-900;
-        font-weight: 700;
-        line-height: 1.2;
-    }
-
-    p {
-        @include font-size(20px);
-
-        padding: 10px 0 0;
-        color: $slate-500;
-        line-height: 1.6;
     }
 }
 

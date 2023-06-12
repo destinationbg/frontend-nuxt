@@ -1,6 +1,67 @@
 <template>
     <section class="demo">
         <div class="container">
+            <div class="section-headings">
+                <SectionHeading :has-description="true" variant="main-category">
+                    <template #title>Почивка и отдих</template>
+                    <template #description>
+                        Няма значение какво търсите и дали пътувате с приятели, със семейството си или просто обичате времето,
+                        прекарано сами със себе си или с любовта на живота Ви. България има какво да предложи на всеки един от
+                        вас.
+                    </template>
+                </SectionHeading>
+
+                <SectionHeading :has-icon="true" :has-description="true" variant="sub-category">
+                    <template #icon>
+                        <img
+                            src="~/assets/images/icons/family.svg"
+                            alt="Family icon"
+                            width="100"
+                            height="100"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </template>
+                    <template #title>Семейни приключения</template>
+                    <template #description>
+                        За тези, които обичат да пътуват с цялото си семейство, България предлага безброй вълнуващи приключения за
+                        малки и големи - от градски паркове до изследване на красивата природа на планините и морето.
+                    </template>
+                </SectionHeading>
+
+                <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
+                    <template #title>Зоологически градини</template>
+                    <template #description>
+                        България има няколко зоологически градини, където семействата могат да се насладят на видове животни от
+                        цял свят. Посетителите могат да видят различни видове животни, като лъвове, слонове, зебри и много други.
+                    </template>
+                    <template #links>
+                        <a href="#">
+                            <span>Вижте всички локации</span>
+                            <i class="fi fi-rr-arrow-small-right" />
+                        </a>
+                    </template>
+                </SectionHeading>
+
+                <SectionHeading :has-icon="true" :has-description="true" :has-buttons="true" variant="inner-location">
+                    <template #icon>
+                        <i class="fi fi-rr-graphic-style" />
+                    </template>
+                    <template #title>Снимки</template>
+                    <template #description>
+                        Разгледайте списък със снимки на тази локация от други хора, за да се насладите на нейната красота и да се
+                        запознаете с различните ѝ аспекти.
+                    </template>
+                    <template #buttons>
+                        <BaseButton type="button" size="small" variant="primary">
+                            <template #text>
+                                <span>Качване на снимки</span>
+                            </template>
+                        </BaseButton>
+                    </template>
+                </SectionHeading>
+            </div>
+
             <div class="buttons">
                 <div class="group">
                     <BaseButton type="button" size="big" variant="primary">
