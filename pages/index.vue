@@ -1,12 +1,6 @@
 <template>
     <main class="page-homepage">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <h1>{{ t('page.home.title') }}</h1>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.home.title')" />
 
         <Elements />
     </main>

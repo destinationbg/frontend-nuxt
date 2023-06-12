@@ -6,14 +6,7 @@
     </Head>
 
     <main class="page-donate">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <h1>{{ t('page.donate.title') }}</h1>
-                    <p>{{ t('page.donate.description') }}</p>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.donate.title')" :description="t('page.donate.description')" />
     </main>
 </template>
 

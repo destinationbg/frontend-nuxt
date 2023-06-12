@@ -6,14 +6,7 @@
     </Head>
 
     <main class="page-about">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <h1>{{ t('page.about.title') }}</h1>
-                    <p>{{ t('page.about.description') }}</p>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.about.title')" :description="t('page.about.description')" />
     </main>
 </template>
 

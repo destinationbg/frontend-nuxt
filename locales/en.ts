@@ -22,11 +22,16 @@ export default {
             title: 'Rating {rating} out of {max_rating}',
             reviews: '{rating} from {reviews} reviews'
         },
+        altitude: '{meters} m above sea level',
+        localityWithPrefix: 'near {locality}',
+        photographer: 'Photographer: {author}',
         buttons: {
             back: 'Back',
             backLabel: 'Previous Page',
-            bookmarkAdd: 'Bookmark it',
+            bookmarkAdd: 'Bookmark this location',
+            bookmarkAddShort: 'Bookmark it',
             bookmarkRemove: 'Remove Bookmark',
+            bookmarkRemoveShort: 'Remove Bookmark',
             bookmarks: 'Bookmarks',
             change: 'Change',
             copy: 'Copy',

@@ -6,15 +6,11 @@
     </Head>
 
     <main class="page-trails">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="subtitle">{{ t('page.trails.subtitle') }}</div>
-                    <h1>{{ t('page.trails.title') }}</h1>
-                    <p>{{ t('page.trails.description') }}</p>
-                </div>
-            </div>
-        </section>
+        <SectionTop
+            :title="t('page.trails.title')"
+            :subtitle="t('page.trails.subtitle')"
+            :description="t('page.trails.description')"
+        />
     </main>
 </template>
 

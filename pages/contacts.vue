@@ -6,14 +6,7 @@
     </Head>
 
     <main class="page-contacts">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <h1>{{ t('page.contacts.title') }}</h1>
-                    <p>{{ t('page.contacts.description') }}</p>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.contacts.title')" :description="t('page.contacts.description')" />
     </main>
 </template>
 

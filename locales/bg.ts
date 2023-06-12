@@ -22,11 +22,16 @@ export default {
             title: 'Рейтинг {rating} от {max_rating}',
             reviews: '{rating} от {reviews} отзива'
         },
+        altitude: '{meters} м. н.в.',
+        localityWithPrefix: 'до {locality}',
+        photographer: 'Фотограф: {author}',
         buttons: {
             back: 'Назад',
             backLabel: 'Предходна страница',
             bookmarkAdd: 'Запазване като отметка',
+            bookmarkAddShort: 'Запазване',
             bookmarkRemove: 'Премахване на отметката',
+            bookmarkRemoveShort: 'Премахване',
             bookmarks: 'Отметки',
             change: 'Промяна',
             copy: 'Копиране',

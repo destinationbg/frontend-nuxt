@@ -6,15 +6,7 @@
     </Head>
 
     <main class="page-map">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="subtitle">{{ t('page.map.subtitle') }}</div>
-                    <h1>{{ t('page.map.title') }}</h1>
-                    <p>{{ t('page.map.description') }}</p>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.map.title')" :subtitle="t('page.map.subtitle')" :description="t('page.map.description')" />
     </main>
 </template>
 

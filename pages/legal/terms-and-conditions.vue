@@ -6,13 +6,7 @@
     </Head>
 
     <main class="page-legal">
-        <section class="top-section">
-            <div class="container">
-                <div class="wrapper">
-                    <h1>{{ t('page.legal.termsAndConditions.title') }}</h1>
-                </div>
-            </div>
-        </section>
+        <SectionTop :title="t('page.legal.termsAndConditions.title')" />
     </main>
 </template>
 
