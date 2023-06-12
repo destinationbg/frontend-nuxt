@@ -28,11 +28,11 @@
         breadcrumbs: [
             {
                 name: 'Рило-Пирински район',
-                url: '/rila-monastery'
+                url: '/location/rila-monastery'
             },
             {
                 name: 'Община Рила',
-                url: '/rila-monastery'
+                url: '/location/rila-monastery'
             }
         ],
         details: {
