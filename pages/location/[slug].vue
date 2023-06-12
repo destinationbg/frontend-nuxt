@@ -8,7 +8,6 @@
     <main class="page-about">
         <SectionTop
             variant="location-view"
-            :slug="location.slug"
             :title="location.title"
             :description="location.short_description"
             :breadcrumbs="location.breadcrumbs"
@@ -23,7 +22,6 @@
     import photoAVIF from '@/assets/images/placeholders/locations/rila-monastery.avif'
 
     const location = {
-        slug: 'rila-monastery',
         title: 'Рилски манастир "Св. Иван Рилски"',
         short_description:
             'Рилският манастир е най-големият и известен източноправославен манастир в България и е един от най-важните културно-исторически и архитектурни паметници на страната. Основан е през 10-ти век и е разположен в дълбоката долина на река Рилска в природен парк „Рилски манастир“. Манастирът е дом на много ценни икони, датиращи от 14-ти до 19-ти век, като един от най-ценните предмети е позлатения иконостас, известен със своята дърворезба. През 1976-та година е включен в списъка на ЮНЕСКО за световно наследство.',
@@ -39,7 +37,7 @@
         ],
         details: {
             rating: {
-                score: 4.2,
+                score: 3.4,
                 total_reviews: 15594
             },
             locality: 'град Рила',

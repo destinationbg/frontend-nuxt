@@ -4,8 +4,17 @@
             <div v-if="variant === null">
                 <div class="wrapper">
                     <div v-if="subtitle" class="subtitle">{{ subtitle }}</div>
+
                     <h1>{{ title }}</h1>
                     <p v-if="description">{{ description }}</p>
+
+                    <ul v-if="breadcrumbs" class="breadcrumbs">
+                        <li v-for="(page, index) in breadcrumbs" :key="index">
+                            <NuxtLink :to="localePath(page.url)">
+                                {{ page.name }}
+                            </NuxtLink>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div v-else>
@@ -19,6 +28,7 @@
                                     </NuxtLink>
                                 </li>
                             </ul>
+
                             <ul class="controls">
                                 <li>
                                     <BaseButton type="button" variant="borderless">
@@ -29,7 +39,8 @@
                                             <span>{{ t('general.buttons.share') }}</span>
                                         </template>
                                     </BaseButton>
-
+                                </li>
+                                <li>
                                     <BaseButton type="button" variant="borderless">
                                         <template #icon-left>
                                             <i class="fi fi-rr-book-bookmark" />
@@ -41,10 +52,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="descriptions">
-                            <h1>{{ title }}</h1>
-                            <p>{{ description }}</p>
-                        </div>
+
+                        <h1>{{ title }}</h1>
+                        <p>{{ description }}</p>
+
                         <div class="details">
                             <BaseRating size="big" :rating="details.rating.score" :max-rating="5">
                                 <template #suffix>
@@ -78,25 +89,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="photo">
-                        <BaseButton type="button" size="small" variant="primary" color="gray">
-                            <template #icon-left>
-                                <i class="fi fi-rr-picture" />
-                            </template>
-                            <template #text>
-                                <span>{{ t('general.buttons.photosAll') }}</span>
-                            </template>
-                        </BaseButton>
 
-                        <figure>
-                            <picture>
-                                <source v-for="(image, index) in details.photo.formats" :key="index" :srcset="image" />
-                                <img :src="details.photo.default" :alt="title" width="640" height="360" decoding="async" />
-                            </picture>
-                            <figcaption>
-                                {{ t('general.photographer', { author: details.photo.author }) }}
-                            </figcaption>
-                        </figure>
+                    <div class="photo">
+                        <div class="photo-holder">
+                            <BaseButton type="button" size="small" variant="primary" color="gray">
+                                <template #icon-left>
+                                    <i class="fi fi-rr-picture" />
+                                </template>
+                                <template #text>
+                                    <span>{{ t('general.buttons.photosAll') }}</span>
+                                </template>
+                            </BaseButton>
+
+                            <div class="bookmark-button">
+                                <BaseButton
+                                    type="button"
+                                    size="small"
+                                    variant="borderless"
+                                    :title="t('general.buttons.favoriteAdd')"
+                                >
+                                    <template #icon-left>
+                                        <i class="fi fi-rr-heart" />
+                                    </template>
+                                </BaseButton>
+                            </div>
+
+                            <figure>
+                                <picture>
+                                    <source v-for="(image, index) in details.photo.formats" :key="index" :srcset="image" />
+                                    <img :src="details.photo.default" :alt="title" width="640" height="360" decoding="async" />
+                                </picture>
+                                <figcaption>
+                                    {{ t('general.photographer', { author: details.photo.author }) }}
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +132,7 @@
 </template>
 
 <script setup lang="ts">
-    const { t } = useI18n()
+    const { t, locale } = useI18n()
     const localePath = useLocalePath()
 
     defineProps({
@@ -122,17 +149,6 @@
             validator: (value: string) => {
                 return [null, 'location-view'].includes(value)
             }
-        },
-        /**
-         * The slug of the location
-         *
-         * @type String
-         * @default
-         * @name slug
-         */
-        slug: {
-            type: String,
-            default: null
         },
         /**
          * The top section heading title
