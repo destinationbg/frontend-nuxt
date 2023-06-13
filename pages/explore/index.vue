@@ -24,11 +24,9 @@
                         <template #description>{{ t('page.explore.category.leisure.description') }}</template>
                     </SectionHeading>
 
-                    <div class="sub-categories">
-                        <div class="wrapper">
-                            <SectionCard v-for="(subcategory, index) in subcategories" :key="index" :data="subcategory" />
-                        </div>
-                    </div>
+                    <BaseDraggableCards :items-count="subcategories.length">
+                        <SectionCard v-for="(subcategory, index) in subcategories" :key="index" :data="subcategory" />
+                    </BaseDraggableCards>
                 </div>
             </section>
 

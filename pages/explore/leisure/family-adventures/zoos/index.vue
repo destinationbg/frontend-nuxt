@@ -1,15 +1,15 @@
 <template>
     <Head>
-        <Title>{{ t('page.explore.category.zoo.title') }}</Title>
+        <Title>{{ t('page.explore.activity.zoos.title') }}</Title>
 
-        <Meta name="description" :content="t('page.explore.category.zoo.description')" />
+        <Meta name="description" :content="t('page.explore.activity.zoos.description')" />
     </Head>
 
     <main class="page-explore">
         <SectionTop
-            :title="t('page.explore.category.zoo.title')"
+            :title="t('page.explore.activity.zoos.title')"
             :subtitle="t('page.explore.category.familyAdventures.title')"
-            :description="t('page.explore.category.zoo.description')"
+            :description="t('page.explore.activity.zoos.description')"
             :breadcrumbs="breadcrumbs"
         />
 
@@ -41,8 +41,8 @@
             url: '/explore/leisure/family-adventures'
         },
         {
-            name: t('page.explore.category.zoo.title'),
-            url: '/explore/leisure/family-adventures/zoo'
+            name: t('page.explore.activity.zoos.title'),
+            url: '/explore/leisure/family-adventures/zoos'
         }
     ]
 

@@ -1,17 +1,24 @@
 .card {
-    overflow: hidden;
+    flex: 0 0 auto;
     width: 407.5px;
     height: 407.5px;
-    border-radius: 12px;
-    background-color: $slate-200;
 
     a {
         position: relative;
         display: block;
+        overflow: hidden;
         width: 100%;
         height: 100%;
+        border-radius: 12px;
+        background-color: $slate-200;
+        user-select: none;
 
         &:hover {
+            img {
+                transition: all 0.5s ease-in-out 0s;
+                transform: scale(1.1);
+            }
+
             .corner {
                 &::after {
                     right: -120px;
@@ -75,10 +82,12 @@
         display: block;
         width: 100%;
         height: 100%;
+        pointer-events: none;
     }
 
     img {
-        pointer-events: none;
+        transition: all 0.3s ease-in-out 0s;
+        transform: scale(1);
     }
 
     .corner {
@@ -91,6 +100,7 @@
         justify-content: center;
         width: 70px;
         height: 70px;
+        pointer-events: none;
 
         &::after {
             content: '';
@@ -101,7 +111,6 @@
             width: 180px;
             height: 180px;
             background-image: linear-gradient(0deg, rgba($black, 1) 0%, rgba($white, 0) 100%);
-            pointer-events: none;
             transition: all 200ms linear;
             transform: rotate(-45deg);
         }

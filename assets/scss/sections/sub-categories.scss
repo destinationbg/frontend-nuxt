@@ -1,10 +1,69 @@
 .sub-categories {
+    position: relative;
+    margin: 0 -100px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: 3;
+        width: 100px;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background-image: linear-gradient(90deg, rgba($white, 1) 0%, rgba($white, 0) 100%);
+    }
+
+    &::after {
+        right: 0;
+        background-image: linear-gradient(90deg, rgba($white, 0) 0%, rgba($white, 1) 100%);
+    }
+
     .wrapper {
         display: flex;
         gap: 30px;
         align-items: stretch;
         justify-content: flex-start;
         overflow: hidden;
+        width: 100%;
+        padding: 0 100px;
+
+        &.draggable {
+            cursor: col-resize;
+        }
+    }
+
+    .button {
+        position: absolute;
+        top: 50%;
+        z-index: 4;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &:first-of-type {
+            left: 25px;
+        }
+
+        &:last-of-type {
+            right: 25px;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+        }
+
+        i {
+            @include font-size(24px);
+
+            width: 24px;
+            height: 24px;
+        }
     }
 }
 
