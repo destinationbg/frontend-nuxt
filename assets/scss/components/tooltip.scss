@@ -1,0 +1,83 @@
+.tooltip-container {
+    position: absolute;
+    top: 200%;
+    left: 0;
+    z-index: 3;
+    padding: 15px 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms linear;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    &::before {
+        top: 9px;
+        left: 16px;
+        z-index: 5;
+        border-width: 0 7px 7px;
+        border-color: transparent transparent $white;
+    }
+
+    &::after {
+        top: 7px;
+        left: 14px;
+        z-index: 4;
+        border-width: 0 9px 9px;
+        border-color: transparent transparent $slate-200;
+    }
+
+    &.right {
+        right: 0;
+        left: unset;
+
+        &::before,
+        &::after {
+            left: unset;
+        }
+
+        &::before {
+            right: 16px;
+        }
+
+        &::after {
+            right: 14px;
+        }
+    }
+
+    &.center {
+        left: 50%;
+        transform: translateX(-50%);
+
+        &::before,
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .tooltip-content {
+        @include font-size(16px);
+
+        overflow: hidden;
+        width: 250px;
+        padding: 15px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $slate-200;
+        border-radius: 12px;
+        background-color: $white;
+        box-shadow: rgba($slate-800, 0.2) 0 3px 8px;
+        line-height: 1.4;
+        text-align: center;
+        white-space: normal;
+    }
+}
+
+@import 'responsive/tooltip';

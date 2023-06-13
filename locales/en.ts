@@ -18,6 +18,11 @@ export default {
             '500': 'Server Error',
             '503': 'Service Unavailable'
         },
+        shevitsa: {
+            title: 'Bulgarian Shevitsa',
+            describe:
+                'The Bulgarian shevitsa is a beautiful and symbolic embroidery, conveying messages of harmony, cultural richness and connection with nature, represented through a variety of ornaments and colors.'
+        },
         rating: {
             title: 'Rating {rating} out of {max_rating}',
             reviews: '{rating} from {reviews} reviews'
@@ -47,7 +52,11 @@ export default {
             share: 'Share',
             viewAsGrid: 'View as Grid',
             viewAsList: 'View as List',
-            viewAsMap: 'View as Map'
+            viewAsMap: 'View as Map',
+            viewAllLocations: 'View All Locations',
+            viewLocalities: 'View Localities',
+            viewRegions: 'View Tourist Regions',
+            viewUnescoSites: 'View UNESCO Sites'
         },
         footer: {
             copyright: '&copy; {year} {name} - All Rights Reserved.',
@@ -79,7 +88,39 @@ export default {
             title: 'Explore',
             description:
                 'Открийте красотата и наследството на България. Разгледайте нейните най-емблематични забележителности, всяка от които показва богатото културно наследство на страната, архитектурната красота и природните чудеса.',
-            subtitle: 'Потопете се в наследството'
+            subtitle: 'Потопете се в наследството',
+            category: {
+                leisure: {
+                    title: 'Почивка и отдих',
+                    description:
+                        'Няма значение какво търсите и дали пътувате с приятели, със семейството си или просто обичате времето, прекарано сами със себе си или с любовта на живота Ви. България има какво да предложи на всеки един от вас.'
+                },
+                familyAdventures: {
+                    title: 'Семейни приключения',
+                    description:
+                        'За тези, които обичат да пътуват с цялото си семейство, България предлага безброй вълнуващи приключения за малки и големи - от градски паркове до изследване на красивата природа на планините и морето.'
+                },
+                romanceForTwo: {
+                    title: 'Романтика за двама',
+                    description:
+                        'Ако искате да избягате от градския живот и да се насладите на малко време на спокойствие с любимия човек, България предлага романтични места за разходки, красиви плажове и вълнуващи преживявания за двама.'
+                },
+                timeWithFriends: {
+                    title: 'Време с приятели',
+                    description:
+                        'За тези, които търсят забавление и нови преживявания с приятели, България е идеалната дестинация. От топлия пясък на морския бряг до разнообразния градски живот, в България има много начини да се забавлявате с приятелите си.'
+                },
+                soloTravelers: {
+                    title: 'Самостоятелни пътешественици',
+                    description:
+                        'Ако пътувате сами, може да се насладите на спокойствието и свободата да изследвате България в свое темпо. България предлага красива природа, уникални културни забележителности и много възможности за отдих и релакс.'
+                },
+                zoo: {
+                    title: 'Зоологически градини',
+                    description:
+                        'България има няколко зоологически градини, където семействата могат да се насладят на видове животни от цял свят. Посетителите могат да видят различни видове животни, като лъвове, слонове, зебри и много други.'
+                }
+            }
         },
         trails: {
             title: 'Trails',

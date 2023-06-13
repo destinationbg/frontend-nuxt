@@ -3,7 +3,7 @@
         <div class="container">
             <div class="brand">
                 <NuxtLink :to="localePath('/')" data-text="Beta">
-                    <img src="~/assets/images/logo.svg" :alt="domain" width="640" height="360" />
+                    <img src="~/assets/images/logo.svg" :alt="domain" width="640" height="360" decoding="async" />
                     <span>{{ domain }}</span>
                 </NuxtLink>
             </div>

@@ -1,0 +1,11 @@
+.sub-categories {
+    .wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+}
+
+@import 'responsive/sub-categories';

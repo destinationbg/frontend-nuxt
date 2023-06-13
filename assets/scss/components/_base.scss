@@ -269,10 +269,18 @@ table {
 }
 
 .container {
+    position: relative;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 100px;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 70px 0;
 }
 
 .demo {

@@ -1,0 +1,59 @@
+.shevitsa {
+    .wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 1px;
+            background-color: $slate-100;
+            transform: translateY(-50%);
+        }
+    }
+
+    .holder {
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+            .tooltip-container {
+                top: 100%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    picture,
+    img {
+        display: block;
+    }
+
+    picture {
+        width: 120px;
+        height: 60px;
+        padding: 0 30px;
+        background-color: $white;
+        cursor: help;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tooltip-container {
+        .tooltip-content {
+            width: 750px;
+        }
+    }
+}
+
+@import 'responsive/shevitsa';
