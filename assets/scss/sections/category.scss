@@ -1,5 +1,6 @@
 .category {
-    .container {
+    .container,
+    .activities {
         display: flex;
         flex-direction: column;
         gap: 70px;

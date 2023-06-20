@@ -16,88 +16,50 @@
         <div class="sections">
             <section class="category">
                 <div class="container">
-                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/zoos')">
-                                {{ t('page.explore.activity.zoos.title') }}
-                            </NuxtLink>
+                    <SectionRepeater
+                        v-for="(data, index) in subcategories"
+                        :key="index"
+                        type="activities-wide"
+                        :position="index % 2 == 0 ? true : false"
+                    >
+                        <template #heading>
+                            <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
+                                <template #title>
+                                    <NuxtLink :to="localePath(data.url)">
+                                        {{ data.title }}
+                                    </NuxtLink>
+                                </template>
+                                <template #description>{{ data.description }}</template>
+                                <template #links>
+                                    <NuxtLink :to="localePath(data.url)">
+                                        <span>{{ t('general.buttons.viewAllLocations') }}</span>
+                                        <i class="fi fi-rr-arrow-small-right" />
+                                    </NuxtLink>
+                                </template>
+                            </SectionHeading>
                         </template>
-                        <template #description>{{ t('page.explore.activity.zoos.description') }}</template>
-                        <template #links>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/zoos')">
-                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                <i class="fi fi-rr-arrow-small-right" />
-                            </NuxtLink>
+                        <template #image>
+                            <div class="photo-holder">
+                                <div class="photo">
+                                    <NuxtLink :to="localePath(data.url)">
+                                        <picture>
+                                            <img
+                                                :src="data.image"
+                                                :alt="data.title"
+                                                width="360"
+                                                height="640"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                        </picture>
+                                    </NuxtLink>
+                                </div>
+                            </div>
                         </template>
-                    </SectionHeading>
-
-                    <SectionShevitsa :variant="1" />
-
-                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/camping')">
-                                {{ t('page.explore.activity.camping.title') }}
-                            </NuxtLink>
+                        <template v-if="index + 1 !== subcategories.length" #shevitsa>
+                            <SectionShevitsa :variant="1" />
                         </template>
-                        <template #description>{{ t('page.explore.activity.camping.description') }}</template>
-                        <template #links>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/camping')">
-                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                <i class="fi fi-rr-arrow-small-right" />
-                            </NuxtLink>
-                        </template>
-                    </SectionHeading>
-
-                    <SectionShevitsa :variant="1" />
-
-                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/fishing')">
-                                {{ t('page.explore.activity.fishing.title') }}
-                            </NuxtLink>
-                        </template>
-                        <template #description>{{ t('page.explore.activity.fishing.description') }}</template>
-                        <template #links>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/fishing')">
-                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                <i class="fi fi-rr-arrow-small-right" />
-                            </NuxtLink>
-                        </template>
-                    </SectionHeading>
-
-                    <SectionShevitsa :variant="1" />
-
-                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/winter-sports')">
-                                {{ t('page.explore.activity.winterSports.title') }}
-                            </NuxtLink>
-                        </template>
-                        <template #description>{{ t('page.explore.activity.winterSports.description') }}</template>
-                        <template #links>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/winter-sports')">
-                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                <i class="fi fi-rr-arrow-small-right" />
-                            </NuxtLink>
-                        </template>
-                    </SectionHeading>
-
-                    <SectionShevitsa :variant="1" />
-
-                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/beaches')">
-                                {{ t('page.explore.activity.beaches.title') }}
-                            </NuxtLink>
-                        </template>
-                        <template #description>{{ t('page.explore.activity.beaches.description') }}</template>
-                        <template #links>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures/beaches')">
-                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                <i class="fi fi-rr-arrow-small-right" />
-                            </NuxtLink>
-                        </template>
-                    </SectionHeading>
+                    </SectionRepeater>
                 </div>
             </section>
         </div>
@@ -105,6 +67,12 @@
 </template>
 
 <script setup lang="ts">
+    import zoos from '@/assets/images/placeholders/activities/wide/zoos.avif'
+    import camping from '@/assets/images/placeholders/activities/wide/camping.avif'
+    import fishing from '@/assets/images/placeholders/activities/wide/fishing.avif'
+    import winterSports from '@/assets/images/placeholders/activities/wide/winter-sports.avif'
+    import beaches from '@/assets/images/placeholders/activities/wide/beaches.avif'
+
     const { t } = useI18n()
     const localePath = useLocalePath()
 
@@ -120,6 +88,39 @@
         {
             name: t('page.explore.category.familyAdventures.title'),
             url: '/explore/leisure/family-adventures'
+        }
+    ]
+
+    const subcategories = [
+        {
+            title: t('page.explore.activity.zoos.title'),
+            description: t('page.explore.activity.zoos.description'),
+            image: zoos,
+            url: '/explore/leisure/family-adventures/zoos'
+        },
+        {
+            title: t('page.explore.activity.camping.title'),
+            description: t('page.explore.activity.camping.description'),
+            image: camping,
+            url: '/explore/leisure/family-adventures/camping'
+        },
+        {
+            title: t('page.explore.activity.fishing.title'),
+            description: t('page.explore.activity.fishing.description'),
+            image: fishing,
+            url: '/explore/leisure/family-adventures/fishing'
+        },
+        {
+            title: t('page.explore.activity.winterSports.title'),
+            description: t('page.explore.activity.winterSports.description'),
+            image: winterSports,
+            url: '/explore/leisure/family-adventures/winter-sports'
+        },
+        {
+            title: t('page.explore.activity.beaches.title'),
+            description: t('page.explore.activity.beaches.description'),
+            image: beaches,
+            url: '/explore/leisure/family-adventures/beaches'
         }
     ]
 

@@ -16,37 +16,47 @@
         <div class="sections">
             <section class="category">
                 <div class="container">
-                    <SectionHeading :has-icon="true" :has-description="true" variant="sub-category">
-                        <template #icon>
-                            <img
-                                src="~/assets/images/icons/family.svg"
-                                alt="Family icon"
-                                width="100"
-                                height="100"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                    <SectionRepeater
+                        v-for="(data, index) in subcategories"
+                        :key="index"
+                        type="activities"
+                        :position="index % 2 == 0 ? true : false"
+                    >
+                        <template #heading>
+                            <SectionHeading :has-icon="true" :has-description="true" variant="sub-category">
+                                <template #icon>
+                                    <img :src="data.icon" alt="Icon" width="100" height="100" loading="lazy" decoding="async" />
+                                </template>
+                                <template #title>
+                                    <NuxtLink :to="localePath(data.url)">
+                                        {{ data.title }}
+                                    </NuxtLink>
+                                </template>
+                                <template #description>{{ data.description }}</template>
+                            </SectionHeading>
                         </template>
-                        <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure/family-adventures')">
-                                {{ t('page.explore.category.familyAdventures.title') }}
-                            </NuxtLink>
+                        <template #cards>
+                            <BaseDraggableCards :items-count="data.activities.length">
+                                <SectionCard
+                                    v-for="(activity, activityIndex) in data.activities"
+                                    :key="activityIndex"
+                                    :data="activity"
+                                />
+                            </BaseDraggableCards>
                         </template>
-                        <template #description>{{ t('page.explore.category.familyAdventures.description') }}</template>
-                    </SectionHeading>
-
-                    <BaseDraggableCards :items-count="activities.length">
-                        <SectionCard v-for="(activity, index) in activities" :key="index" :data="activity" />
-                    </BaseDraggableCards>
+                        <template v-if="index + 1 !== subcategories.length" #shevitsa>
+                            <SectionShevitsa :variant="1" />
+                        </template>
+                    </SectionRepeater>
                 </div>
             </section>
-
-            <SectionShevitsa :variant="1" />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
+    import family from '@/assets/images/icons/family.svg'
+
     import zoos from '@/assets/images/placeholders/activities/zoos.avif'
     import camping from '@/assets/images/placeholders/activities/camping.avif'
     import fishing from '@/assets/images/placeholders/activities/fishing.avif'
@@ -67,31 +77,39 @@
         }
     ]
 
-    const activities = [
+    const subcategories = [
         {
-            title: t('page.explore.activity.zoos.title'),
-            image: zoos,
-            url: '/explore/leisure/family-adventures/zoos'
-        },
-        {
-            title: t('page.explore.activity.camping.title'),
-            image: camping,
-            url: '/explore/leisure/family-adventures/camping'
-        },
-        {
-            title: t('page.explore.activity.fishing.title'),
-            image: fishing,
-            url: '/explore/leisure/family-adventures/fishing'
-        },
-        {
-            title: t('page.explore.activity.winterSports.title'),
-            image: winterSports,
-            url: '/explore/leisure/family-adventures/winter-sports'
-        },
-        {
-            title: t('page.explore.activity.beaches.title'),
-            image: beaches,
-            url: '/explore/leisure/family-adventures/beaches'
+            icon: family,
+            title: t('page.explore.category.familyAdventures.title'),
+            description: t('page.explore.category.familyAdventures.description'),
+            url: '/explore/leisure/family-adventures',
+            activities: [
+                {
+                    title: t('page.explore.activity.zoos.title'),
+                    image: zoos,
+                    url: '/explore/leisure/family-adventures/zoos'
+                },
+                {
+                    title: t('page.explore.activity.camping.title'),
+                    image: camping,
+                    url: '/explore/leisure/family-adventures/camping'
+                },
+                {
+                    title: t('page.explore.activity.fishing.title'),
+                    image: fishing,
+                    url: '/explore/leisure/family-adventures/fishing'
+                },
+                {
+                    title: t('page.explore.activity.winterSports.title'),
+                    image: winterSports,
+                    url: '/explore/leisure/family-adventures/winter-sports'
+                },
+                {
+                    title: t('page.explore.activity.beaches.title'),
+                    image: beaches,
+                    url: '/explore/leisure/family-adventures/beaches'
+                }
+            ]
         }
     ]
 

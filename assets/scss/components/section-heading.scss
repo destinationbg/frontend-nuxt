@@ -32,7 +32,10 @@
         }
     }
 
-    // &.inner-sub-category {}
+    &.inner-sub-category {
+        justify-content: flex-start;
+        padding: 50px 0;
+    }
 
     &.inner-location {
         .title-holder {
@@ -99,6 +102,14 @@
             color: $slate-900;
             font-weight: 700;
             white-space: nowrap;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         aside {

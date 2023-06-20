@@ -1,0 +1,46 @@
+.activities-wide {
+    display: flex;
+    gap: 50px;
+    align-items: stretch;
+
+    &.left {
+        flex-direction: row-reverse;
+    }
+
+    .section-heading,
+    .photo-holder {
+        width: 100%;
+    }
+
+    .photo {
+        position: relative;
+        overflow: hidden;
+        padding: 56.25% 0 0;
+        border-radius: 12px;
+
+        picture {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background-color: $slate-100;
+            cursor: pointer;
+        }
+
+        a,
+        picture,
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            pointer-events: none;
+        }
+    }
+}
+
+@import 'responsive/activities-wide';
