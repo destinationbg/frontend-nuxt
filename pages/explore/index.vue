@@ -13,24 +13,40 @@
         />
 
         <div class="sections">
-            <section class="category">
-                <div class="container">
+            <SectionRepeater
+                v-for="(data, index) in categories"
+                :key="index"
+                type="activities"
+                :position="index % 2 == 0 ? true : false"
+            >
+                <template #heading>
                     <SectionHeading :has-description="true" variant="main-category">
                         <template #title>
-                            <NuxtLink :to="localePath('/explore/leisure')">
-                                {{ t('page.explore.category.leisure.title') }}
+                            <NuxtLink :to="localePath(data.url)">
+                                {{ data.title }}
                             </NuxtLink>
                         </template>
-                        <template #description>{{ t('page.explore.category.leisure.description') }}</template>
+                        <template #description>{{ data.description }}</template>
                     </SectionHeading>
-
-                    <BaseDraggableCards :items-count="subcategories.length">
-                        <SectionCard v-for="(subcategory, index) in subcategories" :key="index" :data="subcategory" />
+                </template>
+                <template #cards>
+                    <BaseDraggableCards
+                        :items-count="data.subcategories.length"
+                        :controls="data.controls"
+                        :alternative="data.alternative"
+                    >
+                        <SectionCard
+                            v-for="(category, categoryIndex) in data.subcategories"
+                            :key="categoryIndex"
+                            :data="category"
+                            :alternative="data.alternative"
+                        />
                     </BaseDraggableCards>
-                </div>
-            </section>
-
-            <SectionShevitsa :variant="1" />
+                </template>
+                <template v-if="index + 1 !== categories.length" #shevitsa>
+                    <SectionShevitsa :variant="1" />
+                </template>
+            </SectionRepeater>
         </div>
     </main>
 </template>
@@ -41,29 +57,106 @@
     import timeWithFriends from '@/assets/images/placeholders/categories/time-with-friends.avif'
     import soloTravelers from '@/assets/images/placeholders/categories/solo-travelers.avif'
 
+    import architecturalAchievements from '@/assets/images/placeholders/categories/architectural-achievements.avif'
+    import religiousSites from '@/assets/images/placeholders/categories/religious-sites.avif'
+    import culture from '@/assets/images/placeholders/categories/culture.avif'
+    import picturesqueNature from '@/assets/images/placeholders/categories/picturesque-nature.avif'
+
+    import localities from '@/assets/images/icons/localities.svg'
+    import touristRegions from '@/assets/images/icons/tourist-regions.svg'
+    import unescoWorldHeritage from '@/assets/images/icons/unesco-world-heritage.svg'
+
     const { t } = useI18n()
     const localePath = useLocalePath()
 
-    const subcategories = [
+    const categories = [
         {
-            title: t('page.explore.category.familyAdventures.title'),
-            image: familyAdventures,
-            url: '/explore/leisure/family-adventures'
+            title: t('page.explore.category.leisure.title'),
+            description: t('page.explore.category.leisure.description'),
+            url: '/explore/leisure',
+            controls: true,
+            alternative: false,
+            subcategories: [
+                {
+                    title: t('page.explore.category.familyAdventures.title'),
+                    image: familyAdventures,
+                    url: '/explore/leisure/family-adventures'
+                },
+                {
+                    title: t('page.explore.category.romanceForTwo.title'),
+                    image: romanceForTwo,
+                    url: '/explore/leisure/romance-for-two'
+                },
+                {
+                    title: t('page.explore.category.timeWithFriends.title'),
+                    image: timeWithFriends,
+                    url: '/explore/leisure/time-with-friends'
+                },
+                {
+                    title: t('page.explore.category.soloTravelers.title'),
+                    image: soloTravelers,
+                    url: '/explore/leisure/solo-travelers'
+                }
+            ]
         },
         {
-            title: t('page.explore.category.romanceForTwo.title'),
-            image: romanceForTwo,
-            url: '/explore/leisure/romance-for-two'
+            title: t('page.explore.category.story.title'),
+            description: t('page.explore.category.story.description'),
+            url: '/explore/story',
+            controls: false,
+            alternative: true,
+            subcategories: [
+                {
+                    title: t('page.explore.category.localities.title'),
+                    description: t('page.explore.category.localities.description'),
+                    button: t('general.buttons.viewLocalities'),
+                    icon: localities,
+                    url: '/explore/story/localities'
+                },
+                {
+                    title: t('page.explore.category.touristRegions.title'),
+                    description: t('page.explore.category.touristRegions.description'),
+                    button: t('general.buttons.viewRegions'),
+                    icon: touristRegions,
+                    url: '/explore/story/tourist-regions'
+                },
+                {
+                    title: t('page.explore.category.unescoWorldHeritage.title'),
+                    description: t('page.explore.category.unescoWorldHeritage.description'),
+                    button: t('general.buttons.viewUnescoSites'),
+                    icon: unescoWorldHeritage,
+                    url: '/explore/story/unesco-world-heritage'
+                }
+            ]
         },
         {
-            title: t('page.explore.category.timeWithFriends.title'),
-            image: timeWithFriends,
-            url: '/explore/leisure/time-with-friends'
-        },
-        {
-            title: t('page.explore.category.soloTravelers.title'),
-            image: soloTravelers,
-            url: '/explore/leisure/solo-travelers'
+            title: t('page.explore.category.wellSpentTime.title'),
+            description: t('page.explore.category.wellSpentTime.description'),
+            url: '/explore/well-spent-time',
+            controls: true,
+            alternative: false,
+            subcategories: [
+                {
+                    title: t('page.explore.category.architecturalAchievements.title'),
+                    image: architecturalAchievements,
+                    url: '/explore/well-spent-time/architectural-achievements'
+                },
+                {
+                    title: t('page.explore.category.religiousSites.title'),
+                    image: religiousSites,
+                    url: '/explore/well-spent-time/religious-sites'
+                },
+                {
+                    title: t('page.explore.category.culture.title'),
+                    image: culture,
+                    url: '/explore/well-spent-time/culture'
+                },
+                {
+                    title: t('page.explore.category.picturesqueNature.title'),
+                    image: picturesqueNature,
+                    url: '/explore/well-spent-time/picturesque-nature'
+                }
+            ]
         }
     ]
 

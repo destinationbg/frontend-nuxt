@@ -1,13 +1,23 @@
 <template>
-    <div class="sub-categories">
+    <div :class="['sub-categories', alternative ? 'alternative' : null, !controls ? 'no-controls' : null]">
         <div ref="container" class="wrapper">
-            <BaseButton :disabled="!canScrollLeft" :title="t('general.buttons.scrollLeft')" @click="scrollContainer(-0.4)">
+            <BaseButton
+                v-if="controls"
+                :disabled="!canScrollLeft"
+                :title="t('general.buttons.scrollLeft')"
+                @click="scrollContainer(-0.4)"
+            >
                 <template #icon-left>
                     <i class="fi fi-rr-arrow-small-left" />
                 </template>
             </BaseButton>
             <slot />
-            <BaseButton :disabled="!canScrollRight" :title="t('general.buttons.scrollRight')" @click="scrollContainer(0.4)">
+            <BaseButton
+                v-if="controls"
+                :disabled="!canScrollRight"
+                :title="t('general.buttons.scrollRight')"
+                @click="scrollContainer(0.4)"
+            >
                 <template #icon-left>
                     <i class="fi fi-rr-arrow-small-right" />
                 </template>
@@ -19,7 +29,7 @@
 <script setup lang="ts">
     const { t } = useI18n()
 
-    defineProps({
+    const props = defineProps({
         /**
          * The count of items
          *
@@ -30,6 +40,28 @@
         itemsCount: {
             type: Number,
             default: 0
+        },
+        /**
+         * If the items' container has an alternative style
+         *
+         * @type Boolean
+         * @default false
+         * @name alternative
+         */
+        alternative: {
+            type: Boolean,
+            default: false
+        },
+        /**
+         * If the items' container has controls
+         *
+         * @type Boolean
+         * @default true
+         * @name controls
+         */
+        controls: {
+            type: Boolean,
+            default: true
         }
     })
 
@@ -139,13 +171,17 @@
     }
 
     onMounted(() => {
-        updateContainerWidth()
+        if (props.controls) {
+            updateContainerWidth()
 
-        window.addEventListener('resize', updateContainerWidth)
+            window.addEventListener('resize', updateContainerWidth)
+        }
     })
 
     onBeforeUnmount(() => {
-        window.removeEventListener('resize', updateContainerWidth)
+        if (props.controls) {
+            window.removeEventListener('resize', updateContainerWidth)
+        }
     })
 
     /**

@@ -14,42 +14,34 @@
         />
 
         <div class="sections">
-            <section class="category">
-                <div class="container">
-                    <SectionRepeater
-                        v-for="(data, index) in subcategories"
-                        :key="index"
-                        type="activities"
-                        :position="index % 2 == 0 ? true : false"
-                    >
-                        <template #heading>
-                            <SectionHeading :has-icon="true" :has-description="true" variant="sub-category">
-                                <template #icon>
-                                    <img :src="data.icon" alt="Icon" width="100" height="100" loading="lazy" decoding="async" />
-                                </template>
-                                <template #title>
-                                    <NuxtLink :to="localePath(data.url)">
-                                        {{ data.title }}
-                                    </NuxtLink>
-                                </template>
-                                <template #description>{{ data.description }}</template>
-                            </SectionHeading>
+            <SectionRepeater
+                v-for="(data, index) in subcategories"
+                :key="index"
+                type="activities"
+                :position="index % 2 == 0 ? true : false"
+            >
+                <template #heading>
+                    <SectionHeading :has-icon="true" :has-description="true" variant="sub-category">
+                        <template #icon>
+                            <img :src="data.icon" alt="Icon" width="100" height="100" loading="lazy" decoding="async" />
                         </template>
-                        <template #cards>
-                            <BaseDraggableCards :items-count="data.activities.length">
-                                <SectionCard
-                                    v-for="(activity, activityIndex) in data.activities"
-                                    :key="activityIndex"
-                                    :data="activity"
-                                />
-                            </BaseDraggableCards>
+                        <template #title>
+                            <NuxtLink :to="localePath(data.url)">
+                                {{ data.title }}
+                            </NuxtLink>
                         </template>
-                        <template v-if="index + 1 !== subcategories.length" #shevitsa>
-                            <SectionShevitsa :variant="1" />
-                        </template>
-                    </SectionRepeater>
-                </div>
-            </section>
+                        <template #description>{{ data.description }}</template>
+                    </SectionHeading>
+                </template>
+                <template #cards>
+                    <BaseDraggableCards :items-count="data.activities.length">
+                        <SectionCard v-for="(activity, activityIndex) in data.activities" :key="activityIndex" :data="activity" />
+                    </BaseDraggableCards>
+                </template>
+                <template v-if="index + 1 !== subcategories.length" #shevitsa>
+                    <SectionShevitsa :variant="1" />
+                </template>
+            </SectionRepeater>
         </div>
     </main>
 </template>

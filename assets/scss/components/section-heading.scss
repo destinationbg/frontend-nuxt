@@ -101,7 +101,6 @@
             width: 100%;
             color: $slate-900;
             font-weight: 700;
-            white-space: nowrap;
 
             a {
                 color: inherit;
@@ -153,6 +152,10 @@
 
                 color: $blue-500;
                 transition: all 200ms linear;
+            }
+
+            span {
+                font-weight: 600;
             }
 
             i {

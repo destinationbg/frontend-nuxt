@@ -2,6 +2,33 @@
     position: relative;
     margin: 0 -100px;
 
+    &.no-controls {
+        margin: 0;
+
+        &::before,
+        &::after,
+        .button {
+            display: none;
+        }
+    }
+
+    &.alternative {
+        .wrapper {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0;
+
+            // grid-template-rows: repeat(2, 1fr);
+            // grid-template-columns: repeat(2, 1fr);
+            // .card {
+            //     &:nth-child(4) {
+            //         grid-area: 2 / 1 / 3 / 3;
+            //     }
+            // }
+        }
+    }
+
     &::before,
     &::after {
         content: '';

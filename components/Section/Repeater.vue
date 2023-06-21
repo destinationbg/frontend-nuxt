@@ -1,12 +1,16 @@
 <template>
-    <div v-if="type === 'activities'" :class="type">
-        <slot name="heading" />
-        <slot name="cards" />
-    </div>
-    <div v-else :class="[type, position !== null ? (position ? 'left' : 'right') : null]">
-        <slot name="heading" />
-        <slot name="image" />
-    </div>
+    <section class="repeater">
+        <div class="container">
+            <div v-if="type === 'activities'" :class="type">
+                <slot name="heading" />
+                <slot name="cards" />
+            </div>
+            <div v-else :class="[type, position !== null ? (position ? 'left' : 'right') : null]">
+                <slot name="heading" />
+                <slot name="image" />
+            </div>
+        </div>
+    </section>
 
     <slot name="shevitsa" />
 </template>

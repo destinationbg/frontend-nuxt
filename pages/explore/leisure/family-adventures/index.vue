@@ -14,54 +14,50 @@
         />
 
         <div class="sections">
-            <section class="category">
-                <div class="container">
-                    <SectionRepeater
-                        v-for="(data, index) in subcategories"
-                        :key="index"
-                        type="activities-wide"
-                        :position="index % 2 == 0 ? true : false"
-                    >
-                        <template #heading>
-                            <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
-                                <template #title>
-                                    <NuxtLink :to="localePath(data.url)">
-                                        {{ data.title }}
-                                    </NuxtLink>
-                                </template>
-                                <template #description>{{ data.description }}</template>
-                                <template #links>
-                                    <NuxtLink :to="localePath(data.url)">
-                                        <span>{{ t('general.buttons.viewAllLocations') }}</span>
-                                        <i class="fi fi-rr-arrow-small-right" />
-                                    </NuxtLink>
-                                </template>
-                            </SectionHeading>
+            <SectionRepeater
+                v-for="(data, index) in activities"
+                :key="index"
+                type="activities-wide"
+                :position="index % 2 == 0 ? true : false"
+            >
+                <template #heading>
+                    <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
+                        <template #title>
+                            <NuxtLink :to="localePath(data.url)">
+                                {{ data.title }}
+                            </NuxtLink>
                         </template>
-                        <template #image>
-                            <div class="photo-holder">
-                                <div class="photo">
-                                    <NuxtLink :to="localePath(data.url)">
-                                        <picture>
-                                            <img
-                                                :src="data.image"
-                                                :alt="data.title"
-                                                width="360"
-                                                height="640"
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
-                                        </picture>
-                                    </NuxtLink>
-                                </div>
-                            </div>
+                        <template #description>{{ data.description }}</template>
+                        <template #links>
+                            <NuxtLink :to="localePath(data.url)">
+                                <span>{{ t('general.buttons.viewAllLocations') }}</span>
+                                <i class="fi fi-rr-arrow-small-right" />
+                            </NuxtLink>
                         </template>
-                        <template v-if="index + 1 !== subcategories.length" #shevitsa>
-                            <SectionShevitsa :variant="1" />
-                        </template>
-                    </SectionRepeater>
-                </div>
-            </section>
+                    </SectionHeading>
+                </template>
+                <template #image>
+                    <div class="photo-holder">
+                        <div class="photo">
+                            <NuxtLink :to="localePath(data.url)">
+                                <picture>
+                                    <img
+                                        :src="data.image"
+                                        :alt="data.title"
+                                        width="360"
+                                        height="640"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </NuxtLink>
+                        </div>
+                    </div>
+                </template>
+                <template v-if="index + 1 !== activities.length" #shevitsa>
+                    <SectionShevitsa :variant="1" />
+                </template>
+            </SectionRepeater>
         </div>
     </main>
 </template>
@@ -91,7 +87,7 @@
         }
     ]
 
-    const subcategories = [
+    const activities = [
         {
             title: t('page.explore.activity.zoos.title'),
             description: t('page.explore.activity.zoos.description'),
