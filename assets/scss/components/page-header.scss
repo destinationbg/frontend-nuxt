@@ -9,6 +9,56 @@
     border-color: $slate-200;
     background-color: transparent;
 
+    &.alternative {
+        position: absolute;
+        border: 0;
+
+        .container {
+            max-width: 100%;
+        }
+
+        .bg-blur,
+        .environment {
+            display: none;
+        }
+
+        .brand {
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+
+            span {
+                color: $white;
+            }
+        }
+
+        .navigation {
+            span {
+                color: $white;
+            }
+        }
+
+        aside {
+            button {
+                &.location-sharing {
+                    i {
+                        color: $indigo-100;
+                    }
+                }
+
+                i {
+                    color: $white;
+                }
+            }
+
+            .divider {
+                border-color: rgba($white, 0.8);
+            }
+        }
+    }
+
     .bg-blur {
         content: '';
         position: absolute;
@@ -72,7 +122,7 @@
             }
         }
 
-        img {
+        svg {
             display: block;
             flex: 0 0 auto;
             width: 30px;

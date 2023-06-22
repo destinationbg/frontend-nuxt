@@ -42,6 +42,7 @@ export default {
             copy: 'Копиране',
             favoriteAdd: 'Добавяне в любими',
             favoriteRemove: 'Премахване от любими',
+            learnMore: 'Научете повече',
             location: 'Споделяне на локация',
             menu: 'Навигация',
             next: 'Напред',

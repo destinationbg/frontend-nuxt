@@ -1,5 +1,5 @@
 <template>
-    <NuxtLayout>
+    <NuxtLayout :alternative="$route.meta.alternative">
         <NuxtPage />
     </NuxtLayout>
 </template>

@@ -1,0 +1,171 @@
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: $slate-50;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(0deg, rgba($white, 0%) 0%, rgba($black, 50%) 100%);
+        pointer-events: none;
+    }
+
+    .slide,
+    picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 300ms linear;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    picture,
+    img {
+        display: block;
+    }
+
+    picture {
+        pointer-events: none;
+    }
+
+    img {
+        object-fit: cover;
+        max-width: unset;
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 100px;
+
+        .location {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            i,
+            span {
+                color: $yellow-300;
+            }
+
+            i {
+                @include font-size(20px);
+
+                display: block;
+                width: 20px;
+                height: 20px;
+            }
+
+            span {
+                @include font-size(24px);
+
+                font-weight: 600;
+            }
+        }
+
+        h1 {
+            @include font-size(80px);
+
+            width: 50%;
+            color: $white;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .button {
+            flex: 0 0 auto;
+        }
+    }
+
+    .controls {
+        position: absolute;
+        right: 100px;
+        bottom: 100px;
+        left: 100px;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: auto;
+
+        ul {
+            display: flex;
+            gap: 10px;
+
+            li {
+                &.active {
+                    .button {
+                        &.borderless {
+                            border-color: $yellow-300;
+                            background-color: $yellow-300;
+                        }
+                    }
+                }
+            }
+        }
+
+        .button {
+            &.borderless {
+                width: 15px;
+                height: 15px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgba($white, 0.8);
+                border-radius: 50%;
+                background-color: transparent;
+
+                span {
+                    color: transparent;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .counter {
+            @include font-size(40px);
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: $yellow-300;
+            font-weight: 700;
+            pointer-events: none;
+            user-select: none;
+            font-feature-settings: 'aalt' on, 'zero' on;
+
+            span {
+                color: $white;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+@import 'responsive/hero-slider';

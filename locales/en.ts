@@ -42,6 +42,7 @@ export default {
             copy: 'Copy',
             favoriteAdd: 'Add to Favorites',
             favoriteRemove: 'Remove from Favourites',
+            learnMore: 'Learn More',
             location: 'Location Sharing',
             menu: 'Navigation',
             next: 'Next',
