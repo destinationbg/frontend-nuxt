@@ -5,16 +5,25 @@
     height: 100vh;
     background-color: $slate-50;
 
-    &::before {
+    &::before,
+    &::after {
         content: '';
         position: absolute;
-        top: 0;
         left: 0;
         z-index: 1;
         width: 100%;
-        height: 300px;
-        background: linear-gradient(0deg, rgba($white, 0%) 0%, rgba($black, 50%) 100%);
+        height: 500px;
         pointer-events: none;
+    }
+
+    &::before {
+        top: 0;
+        background: linear-gradient(0deg, rgba($white, 0%) 0%, rgba($black, 50%) 100%);
+    }
+
+    &::after {
+        bottom: 0;
+        background: linear-gradient(0deg, rgba($black, 50%) 0%, rgba($white, 0%) 100%);
     }
 
     .slide,
@@ -49,8 +58,9 @@
     }
 
     img {
-        object-fit: cover;
+        min-width: 100%;
         max-width: unset;
+        min-height: 100%;
     }
 
     .wrapper {
@@ -93,7 +103,7 @@
         h1 {
             @include font-size(80px);
 
-            width: 50%;
+            width: 65%;
             color: $white;
             font-weight: 800;
             line-height: 1.2;
@@ -117,7 +127,7 @@
 
         ul {
             display: flex;
-            gap: 10px;
+            gap: 15px;
 
             li {
                 &.active {
@@ -133,8 +143,8 @@
 
         .button {
             &.borderless {
-                width: 15px;
-                height: 15px;
+                width: 20px;
+                height: 20px;
                 border-width: 1px;
                 border-style: solid;
                 border-color: rgba($white, 0.8);
@@ -163,6 +173,40 @@
             span {
                 color: $white;
                 opacity: 0.8;
+            }
+        }
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 75px;
+        left: 50%;
+        z-index: 3;
+        transform: translateX(-50%);
+
+        .button {
+            &.borderless {
+                position: relative;
+                width: 40px;
+                height: 80px;
+                border-width: 3px;
+                border-style: solid;
+                border-color: $white;
+                border-radius: 30px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 15px;
+                    left: 50%;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    opacity: 1;
+                    transform: translateX(-50%);
+                    animation: wheel 1.5s infinite;
+                }
             }
         }
     }

@@ -48,6 +48,16 @@
                 <span>/{{ leadingZero(data.length, 2) }}</span>
             </div>
         </div>
+
+        <div class="scroll-down">
+            <BaseButton
+                type="button"
+                size="small"
+                variant="borderless"
+                :title="t('general.buttons.scrollDown')"
+                @click.prevent="scrollDown"
+            />
+        </div>
     </section>
 </template>
 
@@ -57,7 +67,7 @@
     const { t } = useI18n()
     const localePath = useLocalePath()
 
-    defineProps({
+    const props = defineProps({
         /**
          * The slider data
          *
@@ -75,4 +85,34 @@
     const changeSlide = (index: number) => {
         activeSlide.value = index
     }
+
+    const scrollDown = () => {
+        const viewportHeight = window.innerHeight
+
+        window.scrollTo({
+            top: viewportHeight,
+            behavior: 'smooth'
+        })
+    }
+
+    // Function to handle keyboard arrow events
+    const handleKeyboardArrows = (event: KeyboardEvent) => {
+        if (event.key === 'ArrowLeft') {
+            // Go to the previous slide
+            activeSlide.value = (activeSlide.value - 1 + props.data.length) % props.data.length
+        } else if (event.key === 'ArrowRight') {
+            // Go to the next slide
+            activeSlide.value = (activeSlide.value + 1) % props.data.length
+        }
+    }
+
+    // Attach event listener on component mount
+    onMounted(() => {
+        window.addEventListener('keydown', handleKeyboardArrows)
+    })
+
+    // Remove event listener on component unmount
+    onUnmounted(() => {
+        window.removeEventListener('keydown', handleKeyboardArrows)
+    })
 </script>

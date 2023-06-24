@@ -49,6 +49,7 @@ export default {
             nextLabel: 'Следваща страница',
             photoPurchase: 'Закупуване на снимката',
             photosAll: 'Всички снимки',
+            scrollDown: 'Скролиране надолу',
             scrollLeft: 'Скролиране наляво',
             scrollRight: 'Скролиране надясно',
             search: 'Търсене',

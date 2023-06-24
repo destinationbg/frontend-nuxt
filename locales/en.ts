@@ -49,6 +49,7 @@ export default {
             nextLabel: 'Next Page',
             photoPurchase: 'Purchase the Photo',
             photosAll: 'All Photos',
+            scrollDown: 'Scroll Down',
             scrollLeft: 'Scroll Left',
             scrollRight: 'Scroll Right',
             search: 'Search',
