@@ -40,6 +40,7 @@ export default {
             bookmarks: 'Bookmarks',
             change: 'Change',
             copy: 'Copy',
+            exploreAndDiscover: 'Explore and discover in Bulgaria',
             favoriteAdd: 'Add to Favorites',
             favoriteRemove: 'Remove from Favourites',
             learnMore: 'Learn More',
@@ -59,6 +60,10 @@ export default {
             viewAsList: 'View as List',
             viewAsMap: 'View as Map',
             viewLocalities: 'View Localities',
+            viewMoreHistoricalSites: 'View More Historical Sites',
+            viewMoreLocalitiesAndRegions: 'View more localities and regions',
+            viewMoreNatureLandmarks: 'View More Nature Landmarks',
+            viewMoreSeasonalLocations: 'View More Seasonal Locations',
             viewRegions: 'View Tourist Regions',
             viewUnescoSites: 'View UNESCO Sites'
         },
@@ -119,11 +124,6 @@ export default {
                     description:
                         'Ако пътувате сами, може да се насладите на спокойствието и свободата да изследвате България в свое темпо. България предлага красива природа, уникални културни забележителности и много възможности за отдих и релакс.'
                 },
-                zoo: {
-                    title: 'Зоологически градини',
-                    description:
-                        'България има няколко зоологически градини, където семействата могат да се насладят на видове животни от цял свят. Посетителите могат да видят различни видове животни, като лъвове, слонове, зебри и много други.'
-                },
                 story: {
                     title: 'Оставете се историята да ви заплени',
                     description:
@@ -163,6 +163,27 @@ export default {
                 },
                 picturesqueNature: {
                     title: 'Живописна природа',
+                    description: '...'
+                },
+                seasonalActivities: {
+                    title: 'Сезонни дейности',
+                    description:
+                        'Независимо дали търсите вълнението от зимните спортове, красотата на пролетните цветове, топлината на летните плажове или цветовете на есента, България има по нещо за всеки.'
+                },
+                spring: {
+                    title: 'Пролет',
+                    description: '...'
+                },
+                summer: {
+                    title: 'Лято',
+                    description: '...'
+                },
+                autumn: {
+                    title: 'Есен',
+                    description: '...'
+                },
+                winter: {
+                    title: 'Зима',
                     description: '...'
                 }
             },

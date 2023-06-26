@@ -26,9 +26,11 @@
                             <img :src="data.icon" alt="Icon" width="100" height="100" loading="lazy" decoding="async" />
                         </template>
                         <template #title>
-                            <NuxtLink :to="localePath(data.url)">
-                                {{ data.title }}
-                            </NuxtLink>
+                            <h2>
+                                <NuxtLink :to="localePath(data.url)">
+                                    {{ data.title }}
+                                </NuxtLink>
+                            </h2>
                         </template>
                         <template #description>{{ data.description }}</template>
                     </SectionHeading>

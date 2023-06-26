@@ -22,9 +22,11 @@
                 <template #heading>
                     <SectionHeading :has-description="true" variant="main-category">
                         <template #title>
-                            <NuxtLink :to="localePath(data.url)">
-                                {{ data.title }}
-                            </NuxtLink>
+                            <h2>
+                                <NuxtLink :to="localePath(data.url)">
+                                    {{ data.title }}
+                                </NuxtLink>
+                            </h2>
                         </template>
                         <template #description>{{ data.description }}</template>
                     </SectionHeading>
@@ -39,7 +41,7 @@
                             v-for="(category, categoryIndex) in data.subcategories"
                             :key="categoryIndex"
                             :data="category"
-                            :alternative="data.alternative"
+                            :type="data.alternative ? 'alternative' : 'default'"
                         />
                     </BaseDraggableCards>
                 </template>
@@ -65,6 +67,11 @@
     import localities from '@/assets/images/icons/localities.svg'
     import touristRegions from '@/assets/images/icons/tourist-regions.svg'
     import unescoWorldHeritage from '@/assets/images/icons/unesco-world-heritage.svg'
+
+    import spring from '@/assets/images/placeholders/categories/spring.avif'
+    import summer from '@/assets/images/placeholders/categories/summer.avif'
+    import autumn from '@/assets/images/placeholders/categories/autumn.avif'
+    import winter from '@/assets/images/placeholders/categories/winter.avif'
 
     const { t } = useI18n()
     const localePath = useLocalePath()
@@ -155,6 +162,35 @@
                     title: t('page.explore.category.picturesqueNature.title'),
                     image: picturesqueNature,
                     url: '/explore/well-spent-time/picturesque-nature'
+                }
+            ]
+        },
+        {
+            title: t('page.explore.category.seasonalActivities.title'),
+            description: t('page.explore.category.seasonalActivities.description'),
+            url: '/explore/seasonal-activities',
+            controls: true,
+            alternative: false,
+            subcategories: [
+                {
+                    title: t('page.explore.category.spring.title'),
+                    image: spring,
+                    url: '/explore/seasonal-activities/spring'
+                },
+                {
+                    title: t('page.explore.category.summer.title'),
+                    image: summer,
+                    url: '/explore/seasonal-activities/summer'
+                },
+                {
+                    title: t('page.explore.category.autumn.title'),
+                    image: autumn,
+                    url: '/explore/seasonal-activities/autumn'
+                },
+                {
+                    title: t('page.explore.category.winter.title'),
+                    image: winter,
+                    url: '/explore/seasonal-activities/winter'
                 }
             ]
         }

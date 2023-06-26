@@ -11,11 +11,11 @@
                     <span>{{ slide.location }}</span>
                 </div>
 
-                <h1>
+                <div class="title">
                     <NuxtLink :to="localePath(slide.url)">
                         {{ slide.title }}
                     </NuxtLink>
-                </h1>
+                </div>
 
                 <NuxtLink :to="localePath(slide.url)" class="button big primary">
                     <span>{{ t('general.buttons.learnMore') }}</span>

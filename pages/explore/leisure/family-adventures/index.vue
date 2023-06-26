@@ -23,9 +23,11 @@
                 <template #heading>
                     <SectionHeading :has-description="true" :has-links="true" variant="inner-sub-category">
                         <template #title>
-                            <NuxtLink :to="localePath(data.url)">
-                                {{ data.title }}
-                            </NuxtLink>
+                            <h2>
+                                <NuxtLink :to="localePath(data.url)">
+                                    {{ data.title }}
+                                </NuxtLink>
+                            </h2>
                         </template>
                         <template #description>{{ data.description }}</template>
                         <template #links>

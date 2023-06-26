@@ -1,16 +1,29 @@
 <template>
-    <section class="repeater">
-        <div class="container">
-            <div v-if="type === 'activities'" :class="type">
+    <div v-if="type === 'activities'" :class="type">
+        <section class="repeater">
+            <div class="container">
                 <slot name="heading" />
                 <slot name="cards" />
             </div>
-            <div v-else :class="[type, position !== null ? (position ? 'left' : 'right') : null]">
+        </section>
+    </div>
+    <div v-else-if="type === 'categories'" :class="type">
+        <section class="repeater">
+            <slot name="heading" />
+
+            <slot name="grid" />
+
+            <slot name="button" />
+        </section>
+    </div>
+    <div v-else :class="[type, position !== null ? (position ? 'left' : 'right') : null]">
+        <section class="repeater">
+            <div class="container">
                 <slot name="heading" />
                 <slot name="image" />
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <slot name="shevitsa" />
 </template>

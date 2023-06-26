@@ -1,7 +1,9 @@
 .card {
-    flex: 0 0 auto;
-    width: 407.5px;
-    height: 407.5px;
+    &.default {
+        flex: 0 0 auto;
+        width: 407.5px;
+        height: 407.5px;
+    }
 
     &.alternative {
         display: flex;
@@ -14,28 +16,106 @@
         border-radius: 12px;
         background-color: $slate-100;
 
-        h3 {
-            @include font-size(30px);
-
-            width: 100%;
-            color: $slate-900;
-            font-weight: 700;
-            white-space: nowrap;
-
-            a {
-                color: inherit;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-
         p {
             @include font-size(24px);
 
             color: $slate-700;
             line-height: 1.4;
+        }
+    }
+
+    &.rectangle {
+        width: 0;
+        min-width: 100%;
+        height: 0;
+        min-height: 100%;
+        filter: grayscale(80%);
+        cursor: pointer;
+        transition: all 300ms linear;
+
+        &:hover {
+            width: calc(100vw * 0.2 / 1);
+            filter: grayscale(0);
+
+            h3 {
+                bottom: 30px;
+                opacity: 1;
+                visibility: visible;
+
+                &::before {
+                    bottom: -30px;
+                }
+            }
+        }
+
+        a,
+        picture,
+        img {
+            display: block;
+        }
+
+        a {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        picture {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            object-fit: cover;
+            width: auto;
+            height: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            color: $white;
+            text-align: center;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 300ms linear;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 300px;
+                background-image: linear-gradient(0deg, rgba($black, 1) 0%, rgba($white, 0) 100%);
+                pointer-events: none;
+                transition: all 300ms linear;
+            }
+
+            span,
+            i {
+                position: relative;
+                z-index: 2;
+            }
+
+            span {
+                padding: 0 30px;
+                line-height: 1.2;
+            }
         }
     }
 
@@ -158,6 +238,23 @@
                 z-index: 2;
                 color: $blue-50;
                 transition: all 200ms linear;
+            }
+        }
+    }
+
+    h3 {
+        @include font-size(30px);
+
+        width: 100%;
+        color: $slate-900;
+        font-weight: 700;
+        white-space: nowrap;
+
+        a {
+            color: inherit;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
     }

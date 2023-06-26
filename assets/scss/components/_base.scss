@@ -283,41 +283,21 @@ table {
     padding: 70px 0;
 }
 
-.demo {
-    padding: 70px 0;
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: 70px;
-    }
-
-    .section-headings {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+.repeater {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        width: 100vw;
+        height: 500px;
+        margin: 70px 0 0;
+        background-color: $slate-100;
     }
 
     .buttons {
         display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        .group {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-    }
-
-    .ratings {
-        display: flex;
-        gap: 20px;
         align-items: center;
         justify-content: center;
+        margin: 70px 0 0;
     }
 }
 

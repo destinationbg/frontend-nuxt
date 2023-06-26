@@ -4,9 +4,7 @@
             <div v-if="hasIcon" class="icon-container">
                 <slot name="icon" />
             </div>
-            <h2>
-                <slot name="title" />
-            </h2>
+            <slot name="title" />
             <aside v-if="hasButtons">
                 <slot name="buttons" />
             </aside>

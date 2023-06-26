@@ -95,9 +95,8 @@
             }
         }
 
+        h1,
         h2 {
-            @include font-size(40px);
-
             width: 100%;
             color: $slate-900;
             font-weight: 700;
@@ -109,6 +108,14 @@
                     text-decoration: underline;
                 }
             }
+        }
+
+        h1 {
+            @include font-size(60px);
+        }
+
+        h2 {
+            @include font-size(40px);
         }
 
         aside {
