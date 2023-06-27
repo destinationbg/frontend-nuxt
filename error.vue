@@ -10,8 +10,8 @@
             </h1>
             <h2>{{ t('general.error.' + props.error.statusCode) }}</h2>
 
-            <button v-if="!['401', '429'].includes(props.error.statusCode)" class="button big blue" @click="handleError">
-                <span>Back</span>
+            <button v-if="!['401', '429'].includes(props.error.statusCode)" class="button big primary" @click="handleError">
+                <span>{{ t('general.buttons.back') }}</span>
             </button>
         </div>
     </main>

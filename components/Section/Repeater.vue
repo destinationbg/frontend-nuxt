@@ -9,11 +9,13 @@
     </div>
     <div v-else-if="type === 'categories'" :class="type">
         <section class="repeater">
-            <slot name="heading" />
+            <div class="container">
+                <slot name="heading" />
 
-            <slot name="grid" />
+                <slot name="grid" />
 
-            <slot name="button" />
+                <slot name="button" />
+            </div>
         </section>
     </div>
     <div v-else :class="[type, position !== null ? (position ? 'left' : 'right') : null]">

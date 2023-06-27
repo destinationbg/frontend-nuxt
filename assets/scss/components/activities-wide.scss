@@ -1,6 +1,5 @@
 .activities-wide {
     .container {
-        display: flex;
         gap: 50px;
         align-items: stretch;
     }
@@ -8,6 +7,12 @@
     &.left {
         .container {
             flex-direction: row-reverse;
+        }
+    }
+
+    &.right {
+        .container {
+            flex-direction: row;
         }
     }
 

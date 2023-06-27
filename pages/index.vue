@@ -10,18 +10,16 @@
                 :position="index % 2 == 0 ? true : false"
             >
                 <template #heading>
-                    <div class="container">
-                        <SectionHeading :has-description="true" variant="main-category">
-                            <template v-if="data.title" #title>
-                                <h1 v-if="index === 0">{{ data.title }}</h1>
-                                <h2 v-else>{{ data.title }}</h2>
-                            </template>
+                    <SectionHeading :has-description="true" variant="main-category">
+                        <template v-if="data.title" #title>
+                            <h1 v-if="index === 0">{{ data.title }}</h1>
+                            <h2 v-else>{{ data.title }}</h2>
+                        </template>
 
-                            <template #description>
-                                <span v-html="data.description" />
-                            </template>
-                        </SectionHeading>
-                    </div>
+                        <template #description>
+                            <span v-html="data.description" />
+                        </template>
+                    </SectionHeading>
                 </template>
                 <template v-if="data.locations" #grid>
                     <div class="grid">
@@ -34,12 +32,10 @@
                     </div>
                 </template>
                 <template v-if="data.button" #button>
-                    <div class="container">
-                        <div class="buttons">
-                            <NuxtLink :to="localePath(data.url)" class="button big primary">
-                                <span>{{ data.button }}</span>
-                            </NuxtLink>
-                        </div>
+                    <div class="buttons">
+                        <NuxtLink :to="localePath(data.url)" class="button big primary">
+                            <span>{{ data.button }}</span>
+                        </NuxtLink>
                     </div>
                 </template>
                 <template v-if="index !== 0 && index + 1 !== categories.length && index + 2 !== categories.length" #shevitsa>
