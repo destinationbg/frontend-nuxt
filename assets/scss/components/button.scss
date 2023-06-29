@@ -13,11 +13,11 @@
 
     &.primary {
         border-radius: 54px;
-        background-color: $blue-500;
+        background-color: $blue-600;
         transition: all 200ms linear;
 
         &:hover {
-            background-color: $blue-600;
+            background-color: $blue-700;
         }
 
         &.big {
@@ -53,10 +53,10 @@
         }
 
         &.green {
-            background-color: $lime-600;
+            background-color: $lime-700;
 
             &:hover {
-                background-color: $lime-700;
+                background-color: $lime-800;
             }
 
             i,

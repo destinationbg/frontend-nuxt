@@ -216,18 +216,18 @@ table {
     user-select: none;
 
     &.local {
-        border-color: $emerald-500;
+        border-color: $emerald-700;
 
         span {
-            background-color: $emerald-500;
+            background-color: $emerald-700;
         }
     }
 
     &.dev {
-        border-color: $indigo-500;
+        border-color: $indigo-700;
 
         span {
-            background-color: $indigo-500;
+            background-color: $indigo-700;
         }
     }
 
