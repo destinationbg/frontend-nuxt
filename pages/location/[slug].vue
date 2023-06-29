@@ -12,6 +12,10 @@
             :breadcrumbs="location.breadcrumbs"
             :details="location.details"
         />
+
+        <div class="sections">
+            <LocationMap :data="location" />
+        </div>
     </main>
 </template>
 
@@ -19,6 +23,8 @@
     import photoJpg from '@/assets/images/placeholders/locations/rila-monastery.jpg'
     import photoWebP from '@/assets/images/placeholders/locations/rila-monastery.webp'
     import photoAVIF from '@/assets/images/placeholders/locations/rila-monastery.avif'
+
+    import mapPlaceholder from '@/assets/images/placeholders/locations/map-placeholder.avif'
 
     const location = {
         title: 'Рилски манастир "Св. Иван Рилски"',
@@ -48,7 +54,8 @@
                 formats: [photoWebP, photoAVIF],
                 author: 'Андрей Андреев'
             }
-        }
+        },
+        mapPlaceholder
     }
 
     const locationMetaDescription =
