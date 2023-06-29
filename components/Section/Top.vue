@@ -7,7 +7,7 @@
                 <h1>{{ title }}</h1>
                 <p v-if="description">{{ description }}</p>
 
-                <ul v-if="breadcrumbs" class="breadcrumbs">
+                <ul v-if="breadcrumbs.length" class="breadcrumbs">
                     <li v-for="(page, index) in breadcrumbs" :key="index">
                         <NuxtLink :to="localePath(page.url)">
                             {{ page.name }}
