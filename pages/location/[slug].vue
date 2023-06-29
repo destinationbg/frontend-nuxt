@@ -6,8 +6,7 @@
     </Head>
 
     <main class="page-about">
-        <SectionTop
-            variant="location-view"
+        <LocationTop
             :title="location.title"
             :description="location.short_description"
             :breadcrumbs="location.breadcrumbs"
