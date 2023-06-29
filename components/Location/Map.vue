@@ -28,7 +28,7 @@
          */
         data: {
             type: Object,
-            default: null
+            default: () => ({})
         }
     })
 </script>

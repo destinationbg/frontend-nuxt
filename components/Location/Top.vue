@@ -155,7 +155,7 @@
          */
         details: {
             type: Object,
-            default: null
+            default: () => ({})
         }
     })
 </script>

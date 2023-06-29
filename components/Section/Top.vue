@@ -65,7 +65,7 @@
          */
         breadcrumbs: {
             type: Array,
-            default: null
+            default: () => []
         }
     })
 </script>

@@ -48,12 +48,12 @@
          * The sub-category data
          *
          * @type Object
-         * @default
+         * @default {}
          * @name data
          */
         data: {
             type: Object,
-            default: null
+            default: () => ({})
         },
         /**
          * If the card has an alternative style

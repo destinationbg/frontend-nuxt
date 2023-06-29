@@ -72,12 +72,12 @@
          * The slider data
          *
          * @type Object
-         * @default
+         * @default {}
          * @name data
          */
         data: {
             type: Object,
-            default: null
+            default: () => ({})
         }
     })
 

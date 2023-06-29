@@ -61,7 +61,6 @@
     },
     "dependencies": {
         "@flaticon/flaticon-uicons": "^2.2.0",
-        "markdown-it": "^13.0.1",
         "vee-validate": "^4.9.5"
     },
     "husky": {
