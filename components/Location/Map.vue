@@ -81,17 +81,17 @@
     })
 
     const toggleMap = () => {
-        const offset = 150
+        mapShown.value = !mapShown.value
 
-        // Calculate the target position by adding the offset to the section's top position
+        const offset = 150
         const targetPosition = sectionRef.value.getBoundingClientRect().top + window.pageYOffset - offset
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        })
-
-        mapShown.value = !mapShown.value
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            })
+        }, 150)
     }
 
     onKeyStroke('Escape', () => {

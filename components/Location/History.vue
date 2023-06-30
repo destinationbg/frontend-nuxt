@@ -1,5 +1,5 @@
 <template>
-    <section class="location-history">
+    <section ref="sectionRef" class="location-history">
         <div class="container">
             <div class="content" v-html="truncatedContent" />
 
@@ -13,8 +13,6 @@
 </template>
 
 <script setup lang="ts">
-    const { t } = useI18n()
-
     const props = defineProps({
         /**
          * The location content
@@ -28,6 +26,9 @@
             required: true
         }
     })
+
+    const { t } = useI18n()
+    const sectionRef = ref(null)
     const showFullContent = ref(false)
 
     const truncatedContent = computed(() => {
@@ -42,7 +43,21 @@
 
     const showButton = computed(() => props.content.includes('<!-- more -->'))
 
-    function toggleContent() {
+    const toggleContent = () => {
         showFullContent.value = !showFullContent.value
+
+        const offset = 150
+        const targetPosition = sectionRef.value.getBoundingClientRect().top + window.pageYOffset - offset
+
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            })
+        }, 150)
     }
+
+    onKeyStroke('Escape', () => {
+        if (showFullContent.value) showFullContent.value = false
+    })
 </script>
