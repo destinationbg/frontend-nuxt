@@ -1,0 +1,74 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
+.mapboxgl-map {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+.mapboxgl-ctrl {
+    margin: 0 !important;
+
+    &.mapboxgl-ctrl-scale {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        margin: 0 0 10px 10px !important;
+        border-color: $slate-900 !important;
+        border-radius: 0 0 8px 8px;
+        background-color: rgba($white, 0.8);
+        color: $slate-600;
+    }
+
+    &.mapboxgl-ctrl-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin: 10px 10px 0 0 !important;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $slate-300;
+        border-radius: 6px;
+        background-color: $slate-300;
+        box-shadow: 0 2px 4px rgba($blue-900, 0.1);
+        cursor: pointer;
+        user-select: none;
+
+        button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: $white;
+            transition: all 300ms linear;
+
+            &:hover {
+                background-color: $slate-100;
+            }
+
+            &.mapboxgl-ctrl-compass {
+                display: none;
+            }
+
+            .mapboxgl-ctrl-icon {
+                display: block;
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+
+    .mapboxgl-ctrl-logo {
+        margin: 0 0 10px 10px;
+    }
+}

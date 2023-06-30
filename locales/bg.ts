@@ -28,6 +28,9 @@ export default {
             reviews: '{rating} от {reviews} отзива'
         },
         altitude: '{meters} м. н.в.',
+        map: {
+            coordinates: 'GPS координати'
+        },
         localityWithPrefix: 'до {locality}',
         photographer: 'Фотограф: {author}',
         buttons: {

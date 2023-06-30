@@ -28,6 +28,9 @@ export default {
             reviews: '{rating} from {reviews} reviews'
         },
         altitude: '{meters} m above sea level',
+        map: {
+            coordinates: 'GPS Coordinates'
+        },
         localityWithPrefix: 'near {locality}',
         photographer: 'Photographer: {author}',
         buttons: {

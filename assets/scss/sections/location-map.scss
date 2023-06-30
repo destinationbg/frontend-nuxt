@@ -1,11 +1,12 @@
 .location-map {
-    .wrapper {
+    .placeholder {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 250px;
+        transition: all 200ms linear;
 
         picture,
         img {
@@ -36,9 +37,62 @@
             transform: translate(-50%, -50%);
         }
 
-        button {
+        .button {
             position: relative;
             z-index: 2;
+        }
+    }
+
+    .map {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 140px - 81px); // 140px = map container margin top & bottom, 81px = header height
+        border-radius: 12px;
+        background-color: $slate-100;
+
+        .coordinates {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: flex-end;
+            padding: 20px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $slate-400;
+            border-radius: 24px 6px 12px;
+            background-color: $white;
+
+            p {
+                @include font-size(20px);
+
+                width: 100%;
+                color: $slate-600;
+                text-align: right;
+            }
+
+            .coords {
+                @include font-size(22px);
+
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                color: $slate-900;
+                font-weight: 600;
+                font-feature-settings: 'aalt' on, 'zero' on;
+            }
+        }
+
+        .button {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
         }
     }
 }

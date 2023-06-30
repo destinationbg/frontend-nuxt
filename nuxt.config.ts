@@ -43,12 +43,16 @@ export default defineNuxtConfig({
             {
                 autoImports: ['defineStore', ['defineStore', 'definePiniaStore']]
             }
-        ]
+        ],
+        'nuxt-mapbox'
     ],
     // auth: {
     //     origin: process.env.VITE_APP_URL,
     //     enableGlobalAppMiddleware: true
-    // },
+    // },,
+    mapbox: {
+        accessToken: process.env.MAPBOX_ACCESS_TOKEN
+    },
     i18n: {
         baseUrl: process.env.VITE_APP_URL,
         locales: localeDetails,

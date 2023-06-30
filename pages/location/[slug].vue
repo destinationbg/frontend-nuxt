@@ -47,6 +47,10 @@
             }
         ],
         details: {
+            coordinates: {
+                latitude: 42.13348,
+                longitude: 23.34019
+            },
             rating: {
                 score: 3.4,
                 total_reviews: 15594
