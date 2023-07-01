@@ -36,7 +36,7 @@
                     </SectionHeading>
                 </template>
                 <template #cards>
-                    <BaseDraggableCards :items-count="data.activities.length">
+                    <BaseDraggableCards class="sub-categories">
                         <SectionCard v-for="(activity, activityIndex) in data.activities" :key="activityIndex" :data="activity" />
                     </BaseDraggableCards>
                 </template>

@@ -1,6 +1,6 @@
 <template>
-    <div :class="['sub-categories', alternative ? 'alternative' : null, !controls ? 'no-controls' : null]">
-        <div ref="container" class="wrapper">
+    <div :class="[alternative ? 'alternative' : null, !controls ? 'no-controls' : null]">
+        <div ref="containerRef" class="content-holder">
             <BaseButton
                 v-if="controls"
                 :disabled="!canScrollLeft"
@@ -11,7 +11,9 @@
                     <i class="fi fi-rr-arrow-small-left" />
                 </template>
             </BaseButton>
+
             <slot />
+
             <BaseButton
                 v-if="controls"
                 :disabled="!canScrollRight"
@@ -30,17 +32,6 @@
     const { t } = useI18n()
 
     const props = defineProps({
-        /**
-         * The count of items
-         *
-         * @type Number
-         * @default 0
-         * @name itemsCount
-         */
-        itemsCount: {
-            type: Number,
-            default: 0
-        },
         /**
          * If the items' container has an alternative style
          *
@@ -65,7 +56,7 @@
         }
     })
 
-    const container = ref<HTMLElement | null>(null)
+    const containerRef = ref<HTMLElement | null>(null)
     const state = reactive({
         /**
          * The current scroll position of the container
@@ -93,23 +84,23 @@
      * @param percentage - The percentage to scroll (positive for right, negative for left)
      */
     const scrollContainer = (percentage: number) => {
-        if (!container.value) return
+        if (!containerRef.value) return
         const scrollAmount = Math.floor(state.containerWidth * percentage)
         const minScroll = 0
-        const maxScroll = container.value.scrollWidth - container.value.clientWidth
+        const maxScroll = containerRef.value.scrollWidth - containerRef.value.clientWidth
         let newScrollPosition = state.scrollPosition + scrollAmount
 
         // Ensure the new scroll position stays within the valid range
         newScrollPosition = Math.max(minScroll, Math.min(newScrollPosition, maxScroll))
 
         if ('scrollBehavior' in document.documentElement.style) {
-            container.value.scrollBy({
+            containerRef.value.scrollBy({
                 left: scrollAmount,
                 behavior: 'smooth'
             })
             state.scrollPosition = newScrollPosition
         } else {
-            smoothScrollTo(container.value, newScrollPosition, 300, () => {
+            smoothScrollTo(containerRef.value, newScrollPosition, 300, () => {
                 state.scrollPosition = newScrollPosition
             })
         }
@@ -161,9 +152,9 @@
      * Update the container width and scroll position on mounted and window resize
      */
     const updateContainerWidth = () => {
-        if (container.value) {
-            state.containerWidth = container.value.offsetWidth
-            state.maxScrollPosition = container.value.scrollWidth - container.value.clientWidth
+        if (containerRef.value) {
+            state.containerWidth = containerRef.value.offsetWidth
+            state.maxScrollPosition = containerRef.value.scrollWidth - containerRef.value.clientWidth
 
             // Recalculate scroll position to stay within the new maximum scroll position
             state.scrollPosition = Math.max(0, Math.min(state.scrollPosition, state.maxScrollPosition))
@@ -187,7 +178,7 @@
     /**
      * Whether the container can be scrolled to the left
      */
-    const canScrollLeft = computed(() => state.scrollPosition > 0 && container.value)
+    const canScrollLeft = computed(() => state.scrollPosition > 0 && containerRef.value)
 
     /**
      * Whether the container can be scrolled to the right

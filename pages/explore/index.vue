@@ -32,11 +32,7 @@
                     </SectionHeading>
                 </template>
                 <template #cards>
-                    <BaseDraggableCards
-                        :items-count="data.subcategories.length"
-                        :controls="data.controls"
-                        :alternative="data.alternative"
-                    >
+                    <BaseDraggableCards :controls="data.controls" :alternative="data.alternative" class="sub-categories">
                         <SectionCard
                             v-for="(category, categoryIndex) in data.subcategories"
                             :key="categoryIndex"
