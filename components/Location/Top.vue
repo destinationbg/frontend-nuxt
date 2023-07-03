@@ -94,7 +94,12 @@
 
                         <figure>
                             <picture>
-                                <source v-for="(image, index) in details.photo.formats" :key="index" :srcset="image" />
+                                <source
+                                    v-for="(alternativeImage, imageIndex) in details.photo.formats"
+                                    :key="imageIndex"
+                                    :srcset="alternativeImage.image"
+                                    :type="`image/${alternativeImage.type}`"
+                                />
                                 <img :src="details.photo.default" :alt="title" width="640" height="360" decoding="async" />
                             </picture>
                             <figcaption>

@@ -19,14 +19,42 @@
             <div class="section-divider"></div>
 
             <LocationHistory :content="location.content" />
+
+            <div class="section-divider"></div>
+
+            <LocationPhotos :location="location.title" :data="location.photos" />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-    import photoJpg from '@/assets/images/placeholders/locations/rila-monastery.jpg'
-    import photoWebP from '@/assets/images/placeholders/locations/rila-monastery.webp'
-    import photoAVIF from '@/assets/images/placeholders/locations/rila-monastery.avif'
+    import photoJpg_1 from '@/assets/images/placeholders/locations/rila-monastery-1.jpg'
+    import photoWebP_1 from '@/assets/images/placeholders/locations/rila-monastery-1.webp'
+    import photoAVIF_1 from '@/assets/images/placeholders/locations/rila-monastery-1.avif'
+
+    import photoJpg_2 from '@/assets/images/placeholders/locations/rila-monastery-2.jpg'
+    import photoWebP_2 from '@/assets/images/placeholders/locations/rila-monastery-2.webp'
+    import photoAVIF_2 from '@/assets/images/placeholders/locations/rila-monastery-2.avif'
+
+    import photoJpg_3 from '@/assets/images/placeholders/locations/rila-monastery-3.jpg'
+    import photoWebP_3 from '@/assets/images/placeholders/locations/rila-monastery-3.webp'
+    import photoAVIF_3 from '@/assets/images/placeholders/locations/rila-monastery-3.avif'
+
+    import photoJpg_4 from '@/assets/images/placeholders/locations/rila-monastery-4.jpg'
+    import photoWebP_4 from '@/assets/images/placeholders/locations/rila-monastery-4.webp'
+    import photoAVIF_4 from '@/assets/images/placeholders/locations/rila-monastery-4.avif'
+
+    import photoJpg_5 from '@/assets/images/placeholders/locations/rila-monastery-5.jpg'
+    import photoWebP_5 from '@/assets/images/placeholders/locations/rila-monastery-5.webp'
+    import photoAVIF_5 from '@/assets/images/placeholders/locations/rila-monastery-5.avif'
+
+    import photoJpg_6 from '@/assets/images/placeholders/locations/rila-monastery-6.jpg'
+    import photoWebP_6 from '@/assets/images/placeholders/locations/rila-monastery-6.webp'
+    import photoAVIF_6 from '@/assets/images/placeholders/locations/rila-monastery-6.avif'
+
+    import photoJpg_7 from '@/assets/images/placeholders/locations/rila-monastery-7.jpg'
+    import photoWebP_7 from '@/assets/images/placeholders/locations/rila-monastery-7.webp'
+    import photoAVIF_7 from '@/assets/images/placeholders/locations/rila-monastery-7.avif'
 
     import mapPlaceholder from '@/assets/images/placeholders/locations/map-placeholder.avif'
 
@@ -60,11 +88,120 @@
             altitude: 1162,
             unesco: false,
             photo: {
-                default: photoJpg,
-                formats: [photoWebP, photoAVIF],
+                default: photoJpg_1,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_1
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_1
+                    }
+                ],
                 author: 'Андрей Андреев'
             }
         },
+        photos: [
+            {
+                default: photoJpg_1,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_1
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_1
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_2,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_2
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_2
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_3,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_3
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_3
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_4,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_4
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_4
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_5,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_5
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_5
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_6,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_6
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_6
+                    }
+                ],
+                author: 'Андрей Андреев'
+            },
+            {
+                default: photoJpg_7,
+                formats: [
+                    {
+                        type: 'webp',
+                        image: photoWebP_7
+                    },
+                    {
+                        type: 'avif',
+                        image: photoAVIF_7
+                    }
+                ],
+                author: 'Андрей Андреев'
+            }
+        ],
         mapPlaceholder
     }
 

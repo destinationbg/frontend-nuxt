@@ -62,6 +62,7 @@ export default {
             showLess: 'Show Less',
             showMap: 'Show Map',
             showMore: 'Show More',
+            uploadPhoto: 'Upload Photo',
             viewAllLocations: 'View All Locations',
             viewAsGrid: 'View as Grid',
             viewAsList: 'View as List',
@@ -72,7 +73,8 @@ export default {
             viewMoreNatureLandmarks: 'View More Nature Landmarks',
             viewMoreSeasonalLocations: 'View More Seasonal Locations',
             viewRegions: 'View Tourist Regions',
-            viewUnescoSites: 'View UNESCO Sites'
+            viewUnescoSites: 'View UNESCO Sites',
+            writeReview: 'Write Review'
         },
         footer: {
             copyright: '&copy; {year} {name} - All Rights Reserved.',
@@ -233,6 +235,41 @@ export default {
             description:
                 'Влезте в очарователния свят на България с история и природна красота. Каним Ви да изследвате многото съкровища на страната, от древни руини до зашеметяващи природни пейзажи.',
             subtitle: 'България - изпълнена с красоти'
+        },
+        location: {
+            section: {
+                photos: {
+                    title: 'User Photos',
+                    description:
+                        'Разгледайте списък със снимки на тази локация от други хора, за да се насладите на нейната красота и да се запознаете с различните ѝ аспекти.'
+                },
+                features: {
+                    title: 'Peculiarities when visiting'
+                },
+                labels: {
+                    title: 'Labels'
+                },
+                seasons: {
+                    title: 'When to visit?'
+                },
+                workTime: {
+                    title: 'Work Time'
+                },
+                prices: {
+                    title: 'Prices'
+                },
+                contacts: {
+                    title: 'Contacts'
+                },
+                reviews: {
+                    title: 'Reviews',
+                    description:
+                        'Прочетете личните впечатления и съвети на хората, които вече посетиха тази локация, за да се подготвите по-добре за посещението си.'
+                },
+                locationsNearby: {
+                    title: 'Locations Nearby'
+                }
+            }
         },
         legal: {
             termsAndConditions: {
