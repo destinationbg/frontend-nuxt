@@ -23,6 +23,8 @@
             <div class="section-divider"></div>
 
             <LocationPhotos :location="location.title" :data="location.photos" />
+
+            <LocationInformation :data="location.information" />
         </div>
     </main>
 </template>
@@ -101,6 +103,21 @@
                 ],
                 author: 'Андрей Андреев'
             }
+        },
+        information: {
+            weather: {
+                text: 'Манастирът е подходящ за посещение през цялата година.',
+                forecast: {
+                    icon: 'cloud-sun',
+                    temperature: 12,
+                    text: 'облачно'
+                }
+            },
+            work_time:
+                '09.00 - 12.00 часа<br />13.00 - 17.30 часа<br /><br /><strong>Почивни дни:</strong><br />неделя и понеделник',
+            prices: '<strong>Безплатен вход:</strong><br />всяка втора сряда от месеца<br /><br /><strong>Нощувки:</strong><br />25 лева на легло на вечер',
+            contacts:
+                '<strong>Телефон:</strong><br /><a href="tel:+35970542208">+359 70 54 2208</a><br /><br /><strong>Имейл адрес:</strong><br /><a href="mailto:info@rilskimanastir.org">info@rilskimanastir.org</a><br /><br /><strong>Уебсайт:</strong><br /><a href="http://rilskimanastir.org/" target="_blank" rel="noopener">http://rilskimanastir.org/</a>'
         },
         photos: [
             {

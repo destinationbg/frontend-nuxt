@@ -54,6 +54,8 @@ export default {
             nextLabel: 'Следваща страница',
             photoPurchase: 'Закупуване на снимката',
             photosAll: 'Всички снимки',
+            report: 'Докладване',
+            reportAlternative: 'Подаване на сигнал за грешна информация',
             scrollDown: 'Скролиране надолу',
             scrollLeft: 'Скролиране наляво',
             scrollRight: 'Скролиране надясно',
@@ -250,7 +252,8 @@ export default {
                     title: 'Етикети'
                 },
                 seasons: {
-                    title: 'Кога да посетя?'
+                    title: 'Кога да посетя?',
+                    actualWeather: 'Времето в момента:'
                 },
                 workTime: {
                     title: 'Работно време'
@@ -266,7 +269,7 @@ export default {
                     description:
                         'Прочетете личните впечатления и съвети на хората, които вече посетиха тази локация, за да се подготвите по-добре за посещението си.'
                 },
-                locationsNearby: {
+                nearby: {
                     title: 'Обекти в близост'
                 }
             }

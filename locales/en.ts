@@ -54,6 +54,8 @@ export default {
             nextLabel: 'Next Page',
             photoPurchase: 'Purchase the Photo',
             photosAll: 'All Photos',
+            report: 'Report',
+            reportAlternative: 'Reporting Wrong Information',
             scrollDown: 'Scroll Down',
             scrollLeft: 'Scroll Left',
             scrollRight: 'Scroll Right',
@@ -250,7 +252,8 @@ export default {
                     title: 'Labels'
                 },
                 seasons: {
-                    title: 'When to visit?'
+                    title: 'When to visit?',
+                    actualWeather: 'The weather at the moment:'
                 },
                 workTime: {
                     title: 'Work Time'
@@ -266,7 +269,7 @@ export default {
                     description:
                         'Прочетете личните впечатления и съвети на хората, които вече посетиха тази локация, за да се подготвите по-добре за посещението си.'
                 },
-                locationsNearby: {
+                nearby: {
                     title: 'Locations Nearby'
                 }
             }

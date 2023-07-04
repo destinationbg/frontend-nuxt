@@ -1,0 +1,140 @@
+.location-information {
+    .wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+        padding: 40px 40px 80px;
+        border-radius: 12px;
+        background-color: $slate-50;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+    .icon-container {
+        width: 30px;
+        height: 30px;
+
+        i {
+            @include font-size(30px);
+
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: $slate-900;
+        }
+    }
+
+    .forecast {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0 0;
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: $slate-200;
+
+        .box {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+
+        .icon-container {
+            width: 70px;
+            height: 70px;
+
+            i {
+                @include font-size(70px);
+            }
+        }
+
+        .weather {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            strong {
+                @include font-size(40px);
+
+                font-weight: 700;
+                font-feature-settings: 'zero' on;
+            }
+
+            span {
+                @include font-size(20px);
+
+                font-weight: 600;
+            }
+        }
+    }
+
+    h2 {
+        @include font-size(30px);
+
+        color: $slate-900;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    p {
+        @include font-size(24px);
+
+        color: $slate-700;
+        line-height: 1.4;
+        text-align: center;
+        font-feature-settings: 'ss01' on, 'pnum' on, 'lnum' on, 'salt' on, 'liga' off, 'zero' on;
+    }
+
+    a {
+        color: $blue-600;
+        text-decoration: underline;
+        transition: all 200ms linear;
+
+        &:hover {
+            color: $blue-700;
+        }
+    }
+
+    .report {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+        width: 18px;
+        height: 18px;
+
+        .button {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+
+            &.borderless {
+                i {
+                    @include font-size(18px);
+
+                    color: $slate-600;
+                }
+            }
+        }
+    }
+}
+
+@import 'responsive/location-information';
