@@ -19,7 +19,7 @@
 | Server & Building | [Vite](https://npmjs.com/package/vite)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Language          | [TypeScript](https://npmjs.com/package/typescript)                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Framework         | [Nuxt 3](https://npmjs.com/package/nuxt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Plugins           | [i18n](https://npmjs.com/package/@nuxtjs/i18n), [Pinia](https://npmjs.com/package/pinia), [VueUse](https://npmjs.com/package/@vueuse/nuxt), [VeeValidate](https://npmjs.com/package/vee-validate), [Markdown It](https://npmjs.com/package/markdown-it), [NuxtAuth](https://npmjs.com/package/@sidebase/nuxt-auth), [Nuxt Google Tag](https://npmjs.com/package/nuxt-gtag), [Schema.org](https://npmjs.com/package/nuxt-schema-org), [Flaticon UIcons](https://npmjs.com/package/@flaticon/flaticon-uicons) |
+| Plugins           | [i18n](https://npmjs.com/package/@nuxtjs/i18n), [Pinia](https://npmjs.com/package/pinia), [VueUse](https://npmjs.com/package/@vueuse/nuxt), [VeeValidate](https://npmjs.com/package/vee-validate), [NuxtAuth](https://npmjs.com/package/@sidebase/nuxt-auth), [Nuxt Google Tag](https://npmjs.com/package/nuxt-gtag), [Schema.org](https://npmjs.com/package/nuxt-schema-org), [Flaticon UIcons](https://npmjs.com/package/@flaticon/flaticon-uicons) |
 | Styles            | [SASS](https://npmjs.com/package/sass), [PostCSS](https://npmjs.com/package/postcss), [Autoprefixer](https://npmjs.com/package/autoprefixer), [Browserslist](https://npmjs.com/package/browserslist)                                                                                                                                                                                                                                                                                                        |
 | Linters           | [ESlint](https://npmjs.com/package/eslint), [Prettier](https://npmjs.com/package/prettier), [Stylelint](https://npmjs.com/package/stylelint)                                                                                                                                                                                                                                                                                                                                                                |
 | Tests             | [Vitest](https://npmjs.com/package/vitest)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -130,12 +130,14 @@ npm run test
 1. **Маркетинг и реклама** - използвайте канал `#marketing` в Discord
 1. **Друго?** - свържете се с нас чрез нашата [контактна форма в сайта](https://destination.bg/contact) и ни кажете с какво друго искате да ни помогнете или ни пишете директно в канал `#general` в Discord
 
+## Кой вече допринесе?
+
+<a href="https://github.com/destinationbg/frontend-nuxt/graphs/contributors"><img src="https://opencollective.com/destinationbg/contributors.svg?width=890" /></a>
+
 ---
 
 ## Финансов принос
 
 Като проект, управляван изцяло доброволно от общността, без голяма корпоративна подкрепа зад гърба си, приветстваме финансова помощ чрез [GitHub Sponsors](https://github.com/sponsors/destinationbg) и [OpenCollective](https://opencollective.com/destinationbg) страниците.
 
-Предварително благодарим на всеки, който допринесе финансово за поддръжката и развитието на проекта! В изображението отдолу се съдържат аватарите на всички хора, които вече допринесоха.
-
-<a href="https://opencollective.com/destinationbg"><img src="https://opencollective.com/destinationbg/contributors.svg?width=890" /></a>
+Предварително благодарим на всеки, който допринесе финансово за поддръжката и развитието на проекта!
