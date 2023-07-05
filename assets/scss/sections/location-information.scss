@@ -75,7 +75,6 @@
                 @include font-size(40px);
 
                 font-weight: 700;
-                font-feature-settings: 'zero' on;
             }
 
             span {
@@ -101,7 +100,6 @@
         color: $slate-700;
         line-height: 1.4;
         text-align: center;
-        font-feature-settings: 'ss01' on, 'pnum' on, 'lnum' on, 'salt' on, 'liga' off, 'zero' on;
     }
 
     a {
