@@ -45,7 +45,7 @@
                                 <div class="reviews">
                                     {{
                                         t('general.rating.reviews', {
-                                            rating: details.rating.score,
+                                            rating: Number(details.rating.score).toFixed(1),
                                             reviews: details.rating.total_reviews.toLocaleString(locale, {
                                                 minimumFractionDigits: 0
                                             })
@@ -68,7 +68,15 @@
 
                         <div class="altitude">
                             <i class="fi fi-rr-mountains" />
-                            <span>{{ t('general.altitude', { meters: details.altitude }) }}</span>
+                            <span>
+                                {{
+                                    t('general.altitude', {
+                                        meters: details.altitude.toLocaleString(locale, {
+                                            minimumFractionDigits: 0
+                                        })
+                                    })
+                                }}
+                            </span>
                         </div>
                     </div>
                 </div>

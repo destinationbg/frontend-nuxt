@@ -25,6 +25,8 @@
             <LocationPhotos :location="location.title" :data="location.photos" />
 
             <LocationInformation :data="location.information" />
+
+            <LocationReviews :data="location.reviews" :statistics="location.details.rating" />
         </div>
     </main>
 </template>
@@ -83,7 +85,29 @@
             },
             rating: {
                 score: 3.4,
-                total_reviews: 15594
+                total_reviews: 15594,
+                metrics: [
+                    {
+                        score: 5,
+                        reviews: 4190
+                    },
+                    {
+                        score: 4,
+                        reviews: 2432
+                    },
+                    {
+                        score: 3,
+                        reviews: 3628
+                    },
+                    {
+                        score: 2,
+                        reviews: 2864
+                    },
+                    {
+                        score: 1,
+                        reviews: 1480
+                    }
+                ]
             },
             locality: 'град Рила',
             locality_prefix: true,
@@ -219,7 +243,75 @@
                 author: 'Андрей Андреев'
             }
         ],
-        mapPlaceholder
+        mapPlaceholder,
+        reviews: [
+            {
+                id: 1,
+                author: {
+                    names: 'Том Атанасов',
+                    photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=50'
+                },
+                rating: 5,
+                date_added: 1660815374000,
+                comment:
+                    'Рилският манастир беше наистина спиращо дъха изживяване. Сложните стенописи и зашеметяващата архитектура ме оставиха в страхопочитание. Силно препоръчвам да посетите това историческо бижу.'
+            },
+            {
+                id: 2,
+                author: {
+                    names: 'Александър Найденов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=50'
+                },
+                rating: 4,
+                date_added: 1685017043000,
+                comment:
+                    'Манастирът беше още по-впечатляващ, отколкото си представях. Спокойната атмосфера и богатата история направиха посещението ми наистина незабравимо.'
+            },
+            {
+                id: 3,
+                author: {
+                    names: 'Петър Георгиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=50'
+                },
+                rating: 2,
+                date_added: 1685017043000,
+                comment:
+                    'Бях разочарован от посещението си в Рилския манастир. Тълпите бяха огромни и беше трудно да се оцени напълно красотата на мястото.'
+            },
+            {
+                id: 4,
+                author: {
+                    names: 'Пламен Калайджиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=50'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment:
+                    'Рилският манастир е нещо, което трябва да се види от всеки, който посети България. Комбинацията от религиозно и културно значение създава едно наистина смислено преживяване.'
+            },
+            {
+                id: 5,
+                author: {
+                    names: 'Георги Йорданов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=50'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment:
+                    'Стенописите в църквата бяха истинско произведение на изкуството. Вниманието към детайла и наситените цветове спираха дъха. Силно препоръчвам да посетите Рилския манастир.'
+            },
+            {
+                id: 6,
+                author: {
+                    names: 'Мария Величкова',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=50'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment:
+                    'Бях изумена от историята и красотата на Рилския манастир. Отбранителните стени и кули предлагаха страхотна гледка към околния пейзаж. Това определено беше един от акцентите в пътуването ми до България.'
+            }
+        ]
     }
 
     const locationMetaDescription =

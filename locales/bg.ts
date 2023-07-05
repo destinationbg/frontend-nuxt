@@ -25,7 +25,8 @@ export default {
         },
         rating: {
             title: 'Рейтинг {rating} от {max_rating}',
-            reviews: '{rating} от {reviews} отзива'
+            reviews: '{rating} от {reviews} отзива',
+            total: '{reviews} отзива'
         },
         altitude: '{meters} м. н.в.',
         map: {

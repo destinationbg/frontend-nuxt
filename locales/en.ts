@@ -25,7 +25,8 @@ export default {
         },
         rating: {
             title: 'Rating {rating} out of {max_rating}',
-            reviews: '{rating} from {reviews} reviews'
+            reviews: '{rating} from {reviews} reviews',
+            total: '{reviews} reviews total'
         },
         altitude: '{meters} m above sea level',
         map: {

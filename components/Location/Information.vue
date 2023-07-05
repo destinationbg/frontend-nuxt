@@ -25,12 +25,7 @@
                         </div>
                     </div>
                     <div class="report">
-                        <BaseButton
-                            type="button"
-                            variant="borderless"
-                            size="small"
-                            :title="t('general.buttons.reportAlternative')"
-                        >
+                        <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
                                 <i class="fi fi-rr-comment-exclamation" />
                             </template>
@@ -46,12 +41,7 @@
                         <p v-html="data.work_time" />
                     </div>
                     <div class="report">
-                        <BaseButton
-                            type="button"
-                            variant="borderless"
-                            size="small"
-                            :title="t('general.buttons.reportAlternative')"
-                        >
+                        <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
                                 <i class="fi fi-rr-comment-exclamation" />
                             </template>
@@ -67,12 +57,7 @@
                         <p v-html="data.prices" />
                     </div>
                     <div class="report">
-                        <BaseButton
-                            type="button"
-                            variant="borderless"
-                            size="small"
-                            :title="t('general.buttons.reportAlternative')"
-                        >
+                        <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
                                 <i class="fi fi-rr-comment-exclamation" />
                             </template>
@@ -88,7 +73,7 @@
                         <p v-html="data.contacts" />
                     </div>
                     <div class="report">
-                        <BaseButton type="button" variant="borderless">
+                        <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
                                 <i class="fi fi-rr-comment-exclamation" />
                             </template>

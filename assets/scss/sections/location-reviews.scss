@@ -1,0 +1,182 @@
+.location-reviews {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 80px;
+        background-color: $slate-50;
+    }
+
+    .statistics {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 30px;
+        border-radius: 12px;
+        background-color: $slate-100;
+
+        .metrics,
+        .overall-score {
+            width: 100%;
+        }
+
+        .metrics {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -1px;
+                width: 2px;
+                height: 100%;
+                background-color: $slate-200;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 300px;
+                height: 100%;
+
+                li {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                }
+            }
+
+            span,
+            svg {
+                flex: 0 0 auto;
+            }
+
+            span {
+                @include font-size(20px);
+
+                width: 10px;
+                color: $slate-900;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+
+                path {
+                    fill: $amber-400;
+                }
+            }
+
+            .bar {
+                height: 10px;
+                border-radius: 6px;
+                background-color: $lime-500;
+            }
+        }
+    }
+
+    .list {
+        columns: 4;
+        column-gap: 30px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 0 0 30px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: $white;
+            box-shadow: rgba(0, 0, 0, 10%) 0 4px 6px -1px, rgba(0, 0, 0, 6%) 0 2px 4px -1px;
+            break-inside: avoid;
+        }
+
+        .author {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            picture {
+                position: relative;
+                display: block;
+                flex: 0 0 auto;
+                overflow: hidden;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $slate-200;
+
+                img {
+                    position: relative;
+                    z-index: 2;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    user-select: none;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .names {
+                @include font-size(20px);
+
+                color: $slate-900;
+                font-weight: 600;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            break-inside: avoid;
+
+            p {
+                @include font-size(20px);
+
+                color: $slate-600;
+                line-height: 1.4;
+            }
+
+            .button {
+                &.borderless {
+                    height: unset;
+
+                    span {
+                        @include font-size(18px);
+
+                        color: $blue-600;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            padding: 20px 0 0;
+            border-width: 1px 0 0;
+            border-style: solid;
+            border-color: $slate-100;
+
+            time {
+                @include font-size(18px);
+
+                color: $slate-500;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@import 'responsive/location-reviews';
