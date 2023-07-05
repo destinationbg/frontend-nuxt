@@ -1,0 +1,9 @@
+.location-features {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@import 'responsive/location-features';

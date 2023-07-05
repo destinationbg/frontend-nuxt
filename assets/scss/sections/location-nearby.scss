@@ -1,0 +1,9 @@
+.location-nearby {
+    .wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+}
+
+@import 'responsive/location-nearby';

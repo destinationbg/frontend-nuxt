@@ -24,9 +24,19 @@
 
             <LocationPhotos :location="location.title" :data="location.photos" />
 
+            <div class="container">
+                <div class="dual-box">
+                    <LocationFeatures />
+
+                    <LocationLabels />
+                </div>
+            </div>
+
             <LocationInformation :data="location.information" />
 
             <LocationReviews :data="location.reviews" :statistics="location.details.rating" />
+
+            <LocationNearby />
         </div>
     </main>
 </template>
