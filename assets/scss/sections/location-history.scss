@@ -1,73 +1,177 @@
 .location-history {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $slate-900;
-        font-weight: 700;
-        line-height: 1.2;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        max-width: 1024px;
+        margin: 0 auto;
     }
 
-    h1 + p,
-    h2 + p,
-    h3 + p,
-    h4 + p,
-    h5 + p,
-    h6 + p {
-        margin-top: 30px;
-    }
+    .content {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $slate-900;
+            font-weight: 700;
+            line-height: 1.2;
+        }
 
-    h1,
-    h2 {
-        @include font-size(40px);
-    }
+        h1 + p,
+        h2 + p,
+        h3 + p,
+        h4 + p,
+        h5 + p,
+        h6 + p {
+            margin-top: 30px;
+        }
 
-    h3 {
-        @include font-size(36px);
-    }
+        h1,
+        h2 {
+            @include font-size(40px);
+        }
 
-    h4 {
-        @include font-size(32px);
-    }
+        h3 {
+            @include font-size(36px);
+        }
 
-    h5 {
-        @include font-size(28px);
-    }
+        h4 {
+            @include font-size(32px);
+        }
 
-    h6 {
-        @include font-size(24px);
-    }
+        h5 {
+            @include font-size(28px);
+        }
 
-    p + h1,
-    p + h2,
-    p + h3,
-    p + h4,
-    p + h5,
-    p + h6 {
-        margin-top: 40px;
-    }
+        h6 {
+            @include font-size(24px);
+        }
 
-    p {
-        @include font-size(24px);
+        p + h1,
+        p + h2,
+        p + h3,
+        p + h4,
+        p + h5,
+        p + h6 {
+            margin-top: 40px;
+        }
 
-        margin-top: 20px;
-        color: $slate-700;
-        line-height: 1.4;
-    }
+        p {
+            @include font-size(24px);
 
-    a {
-        color: $blue-600;
-        transition: all 300ms linear;
+            margin-top: 20px;
+            color: $slate-700;
+            line-height: 1.4;
+            text-align: justify;
+        }
 
-        &:hover {
-            color: $blue-700;
+        a {
+            color: $blue-600;
+            transition: all 300ms linear;
+
+            &:hover {
+                color: $blue-700;
+            }
         }
     }
 
-    .button {
-        margin: 40px 0 0;
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 12px;
+        background-color: $slate-50;
+
+        .authors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+
+            p {
+                @include font-size(16px);
+
+                color: $slate-700;
+                font-weight: 600;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: center;
+
+                &.multiple {
+                    gap: 0;
+
+                    li {
+                        margin: -5px;
+
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+
+                li {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    picture,
+                    img {
+                        display: block;
+                    }
+
+                    picture {
+                        overflow: hidden;
+                        width: 40px;
+                        height: 40px;
+                        border-width: 2px;
+                        border-style: solid;
+                        border-color: $white;
+                        border-radius: 50%;
+                        background-color: $slate-100;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    span {
+                        @include font-size(18px);
+
+                        color: $slate-700;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .contribute {
+            p {
+                @include font-size(16px);
+
+                color: $slate-700;
+                line-height: 1.4;
+            }
+
+            a {
+                color: inherit;
+                font-weight: 700;
+                transition: all 200ms linear;
+
+                &:hover {
+                    color: $blue-700;
+                }
+            }
+        }
     }
 }
 

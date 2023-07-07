@@ -80,7 +80,7 @@ export default {
             writeReview: 'Write Review'
         },
         footer: {
-            copyright: '&copy; {year} {name} - All Rights Reserved.',
+            copyright: '&copy; {year} <strong>{name}</strong> - All Rights Reserved.',
             mission:
                 'This website is a non-profit organization created by volunteers. Through it we want to showcase the rich cultural heritage and unique natural sights of Bulgaria to inspire you to travel and explore.',
             socials: 'If you like what we do, you can follow us on the following social networks:',
@@ -273,6 +273,11 @@ export default {
                 nearby: {
                     title: 'Locations Nearby'
                 }
+            },
+            content: {
+                authors: 'Author of the content is | Authors of the content are',
+                contribute:
+                    'All text content related to <strong>{location}</strong> is provided completely voluntarily by the users of the site, and we are not responsible for the copyright on it. If you wish to contribute, you can do so via our <a href="{repositoryUrl}" target="blank" rel="noopener">GitHub repository</a> after reading our <a href="{contributingUrl} " target="blank" rel="noopener">Volunteer Handbook</a> (it\'s in Bulgarian).'
             }
         },
         legal: {
