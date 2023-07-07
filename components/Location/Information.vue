@@ -27,7 +27,7 @@
                     <div class="report">
                         <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
-                                <i class="fi fi-rr-comment-exclamation" />
+                                <i class="fi fi-rr-exclamation" />
                             </template>
                         </BaseButton>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="report">
                         <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
-                                <i class="fi fi-rr-comment-exclamation" />
+                                <i class="fi fi-rr-exclamation" />
                             </template>
                         </BaseButton>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="report">
                         <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
-                                <i class="fi fi-rr-comment-exclamation" />
+                                <i class="fi fi-rr-exclamation" />
                             </template>
                         </BaseButton>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="report">
                         <BaseButton type="button" variant="borderless" :title="t('general.buttons.reportAlternative')">
                             <template #icon-left>
-                                <i class="fi fi-rr-comment-exclamation" />
+                                <i class="fi fi-rr-exclamation" />
                             </template>
                         </BaseButton>
                     </div>
