@@ -119,7 +119,7 @@
     const localePath = useLocalePath()
     const modalStore = useModalStore()
 
-    const mapBoxToken = import.meta.env.MAPBOX_ACCESS_TOKEN
+    const mapBoxToken = import.meta.env.VITE_APP_MAPBOX_ACCESS_TOKEN
     const coordinateType = ref('dms')
     const styleElId = 'overlay-related'
     const photoEl = ref(null)

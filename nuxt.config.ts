@@ -49,9 +49,9 @@ export default defineNuxtConfig({
     // auth: {
     //     origin: process.env.VITE_APP_URL,
     //     enableGlobalAppMiddleware: true
-    // },,
+    // },
     mapbox: {
-        accessToken: process.env.MAPBOX_ACCESS_TOKEN
+        accessToken: process.env.VITE_APP_MAPBOX_ACCESS_TOKEN
     },
     i18n: {
         baseUrl: process.env.VITE_APP_URL,

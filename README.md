@@ -67,11 +67,11 @@ cp .env.local .env
 </details>
 
 <details>
-<summary>Попълване на "MAPBOX_ACCESS_TOKEN" и "MAPBOX_MAP_STYLE"</summary>
+<summary>Попълване на "VITE_APP_MAPBOX_ACCESS_TOKEN" и "VITE_APP_MAPBOX_MAP_STYLE"</summary>
 
-Създайте собствен акаунт в [сайта на Mapbox](https://account.mapbox.com/), след което използвайте **Default public token** за `MAPBOX_ACCESS_TOKEN`.
+Създайте собствен акаунт в [сайта на Mapbox](https://account.mapbox.com/), след което използвайте **Default public token** за `VITE_APP_MAPBOX_ACCESS_TOKEN`.
 
-Променливата `MAPBOX_MAP_STYLE` вече е попълнена, но все пак, ако искате да експериментирате със собствен стил на картата, е нужно да отидете в [Mapbox Studio](https://studio.mapbox.com/). В горния ляв ъгъл на страницата кликнете на трите точки, за да се разпъне падащо меню и от там копирайте **Style URL** линка, който се е генерирал.
+Променливата `VITE_APP_MAPBOX_MAP_STYLE` вече е попълнена, но все пак, ако искате да експериментирате със собствен стил на картата, е нужно да отидете в [Mapbox Studio](https://studio.mapbox.com/). В горния ляв ъгъл на страницата кликнете на трите точки, за да се разпъне падащо меню и от там копирайте **Style URL** линка, който се е генерирал.
 
 </details>
 
