@@ -1,0 +1,237 @@
+.modal-photo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black, 80%);
+
+    .photo-container {
+        position: relative;
+        display: block;
+        flex: 0 0 auto;
+        overflow: hidden;
+        min-width: 800px;
+        min-height: 300px;
+        margin: 50px 100px;
+        border-radius: 12px;
+        background-color: $slate-50;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .photo {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .details-container {
+        margin: 0 0 100px;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: $white;
+        }
+
+        .heading {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: space-between;
+
+            .author {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                strong {
+                    @include font-size(20px);
+
+                    color: $slate-900;
+                    font-weight: 600;
+                }
+            }
+
+            picture,
+            img {
+                display: block;
+            }
+
+            picture {
+                overflow: hidden;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $slate-100;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+
+        .details {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            justify-content: space-between;
+
+            .information {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: $slate-300;
+                border-radius: 12px;
+                background-color: $slate-100;
+
+                .title {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    i,
+                    span {
+                        color: $slate-700;
+                    }
+
+                    i {
+                        @include font-size(24px);
+
+                        display: block;
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    span {
+                        @include font-size(18px);
+
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    align-items: stretch;
+                    justify-content: flex-start;
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .label,
+                        .description {
+                            font-weight: 600;
+                        }
+
+                        .label {
+                            @include font-size(16px);
+
+                            color: $slate-500;
+                            text-transform: uppercase;
+                        }
+
+                        .description {
+                            @include font-size(18px);
+
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+                            color: $slate-900;
+                        }
+                    }
+                }
+
+                .button {
+                    &.borderless {
+                        height: auto;
+
+                        &:hover {
+                            i {
+                                color: $blue-700;
+                            }
+                        }
+
+                        i {
+                            @include font-size(16px);
+
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+                            color: inherit;
+                        }
+                    }
+                }
+
+                a {
+                    color: $blue-600;
+                    transition: all 200ms linear;
+
+                    &:hover {
+                        color: $blue-700;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .snapshot {
+                overflow: hidden;
+                width: 200px;
+                height: 100%;
+                border-width: 1px;
+                border-style: solid;
+                border-color: $slate-300;
+                border-radius: 12px;
+                background-color: $slate-100;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@import 'responsive/modal-photo';

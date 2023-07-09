@@ -106,17 +106,17 @@
                 gap: 10px;
                 align-items: center;
 
-                &.multiple {
-                    gap: 0;
+                // &.multiple {
+                //     gap: 0;
 
-                    li {
-                        margin: -5px;
+                //     li {
+                //         margin: -5px;
 
-                        span {
-                            display: none;
-                        }
-                    }
-                }
+                //         span {
+                //             display: none;
+                //         }
+                //     }
+                // }
 
                 li {
                     display: flex;

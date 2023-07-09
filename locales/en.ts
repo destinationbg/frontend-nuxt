@@ -79,6 +79,13 @@ export default {
             viewUnescoSites: 'View UNESCO Sites',
             writeReview: 'Write Review'
         },
+        modal: {
+            coordinates: 'GPS Coordinates',
+            dateUploaded: 'Date Uploaded',
+            information: 'Information',
+            locationCaptured: 'Location Captured',
+            sizes: 'Sizes'
+        },
         footer: {
             copyright: '&copy; {year} <strong>{name}</strong> - All Rights Reserved.',
             mission:

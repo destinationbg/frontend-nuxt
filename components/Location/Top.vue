@@ -5,7 +5,7 @@
                 <div class="information">
                     <div class="navigation">
                         <ul class="breadcrumbs">
-                            <li v-for="(page, index) in breadcrumbs" :key="index">
+                            <li v-for="(page, index) in data.breadcrumbs" :key="index">
                                 <NuxtLink :to="localePath(page.url)">
                                     {{ page.name }}
                                 </NuxtLink>
@@ -36,17 +36,17 @@
                         </ul>
                     </div>
 
-                    <h1>{{ title }}</h1>
-                    <p>{{ description }}</p>
+                    <h1>{{ data.title }}</h1>
+                    <p>{{ data.short_description }}</p>
 
                     <div class="details">
-                        <BaseRating size="big" :rating="details.rating.score" :max-rating="5">
+                        <BaseRating size="big" :rating="data.details.rating.score" :max-rating="5">
                             <template #suffix>
                                 <div class="reviews">
                                     {{
                                         t('general.rating.reviews', {
-                                            rating: Number(details.rating.score).toFixed(1),
-                                            reviews: details.rating.total_reviews.toLocaleString(locale, {
+                                            rating: Number(data.details.rating.score).toFixed(1),
+                                            reviews: data.details.rating.total_reviews.toLocaleString(locale, {
                                                 minimumFractionDigits: 0
                                             })
                                         })
@@ -59,9 +59,9 @@
                             <i class="fi fi-rr-marker" />
                             <span>
                                 {{
-                                    details.locality_prefix
-                                        ? t('general.localityWithPrefix', { locality: details.locality })
-                                        : details.locality
+                                    data.details.locality_prefix
+                                        ? t('general.localityWithPrefix', { locality: data.details.locality })
+                                        : data.details.locality
                                 }}
                             </span>
                         </div>
@@ -71,7 +71,7 @@
                             <span>
                                 {{
                                     t('general.altitude', {
-                                        meters: details.altitude.toLocaleString(locale, {
+                                        meters: data.details.altitude.toLocaleString(locale, {
                                             minimumFractionDigits: 0
                                         })
                                     })
@@ -100,18 +100,24 @@
                             </BaseButton>
                         </div>
 
-                        <figure>
+                        <figure @click="openPhotoModal">
                             <picture>
                                 <source
-                                    v-for="(alternativeImage, imageIndex) in details.photo.formats"
+                                    v-for="(alternativeImage, imageIndex) in data.details.photo.formats"
                                     :key="imageIndex"
                                     :srcset="alternativeImage.image"
                                     :type="`image/${alternativeImage.type}`"
                                 />
-                                <img :src="details.photo.default" :alt="title" width="640" height="360" decoding="async" />
+                                <img
+                                    :src="data.details.photo.default"
+                                    :alt="data.title"
+                                    width="640"
+                                    height="360"
+                                    decoding="async"
+                                />
                             </picture>
                             <figcaption>
-                                {{ t('general.photographer', { author: details.photo.author }) }}
+                                {{ t('general.photographer', { author: data.details.photo.author.names }) }}
                             </figcaption>
                         </figure>
                     </div>
@@ -122,53 +128,47 @@
 </template>
 
 <script setup lang="ts">
-    const { t, locale } = useI18n()
-    const localePath = useLocalePath()
+    import { useModalStore } from '@/stores/ModalStore'
 
-    defineProps({
+    const props = defineProps({
         /**
-         * The top section heading title
-         *
-         * @type String
-         * @default
-         * @name title
-         */
-        title: {
-            type: String,
-            default: null
-        },
-        /**
-         * The top section description
-         *
-         * @type String
-         * @default
-         * @name description
-         */
-        description: {
-            type: String,
-            default: null
-        },
-        /**
-         * The top section breadcrumbs
-         *
-         * @type Array
-         * @default []
-         * @name breadcrumbs
-         */
-        breadcrumbs: {
-            type: Array,
-            default: null
-        },
-        /**
-         * The top section details
+         * The top section data
          *
          * @type Object
          * @default {}
-         * @name details
+         * @name data
          */
-        details: {
+        data: {
             type: Object,
             default: () => ({})
         }
     })
+
+    const { t, locale } = useI18n()
+    const localePath = useLocalePath()
+    const modalStore = useModalStore()
+
+    const openPhotoModal = () => {
+        modalStore.setPhotoVisibility(true)
+        modalStore.setPhotoData({
+            encoded: props.data.details.photo.encoded,
+            author: {
+                names: props.data.details.photo.author.names,
+                avatar: props.data.details.photo.author.avatar
+            },
+            place: {
+                slug: props.data.slug,
+                title: props.data.title
+            },
+            sizes: {
+                width: props.data.details.photo.sizes.width,
+                height: props.data.details.photo.sizes.height
+            },
+            date: props.data.details.photo.date,
+            coordinates: {
+                latitude: props.data.details.coordinates.latitude,
+                longitude: props.data.details.coordinates.longitude
+            }
+        })
+    }
 </script>

@@ -87,7 +87,7 @@
                         </div>
                         <div class="footer">
                             <time>
-                                {{ useDateFormatter(item.date_added, locale) }}
+                                {{ d(new Date(item.date_added), 'full', locale) }}
                             </time>
                         </div>
                     </div>
@@ -98,8 +98,6 @@
 </template>
 
 <script setup lang="ts">
-    import { useDateFormatter } from '@/composables/useDateFormatter'
-
     defineProps({
         /**
          * The review data
@@ -125,5 +123,5 @@
         }
     })
 
-    const { t, locale } = useI18n()
+    const { d, t, locale } = useI18n()
 </script>

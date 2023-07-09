@@ -79,6 +79,13 @@ export default {
             viewUnescoSites: 'Разгледайте ЮНЕСКО обектите',
             writeReview: 'Добавяне на ревю'
         },
+        modal: {
+            coordinates: 'GPS координати',
+            dateUploaded: 'Дата на качване',
+            information: 'Информация',
+            locationCaptured: 'Заснет обект',
+            sizes: 'Размери'
+        },
         footer: {
             copyright: '&copy; {year} <strong>{name}</strong> - всички права запазени.',
             mission:

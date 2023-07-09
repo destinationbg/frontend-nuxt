@@ -21,10 +21,10 @@
                     </template>
                 </SectionHeading>
 
-                <BaseDraggableCards v-if="data.length" class="gallery">
+                <BaseDraggableCards v-if="data.photos.length" class="gallery">
                     <template v-for="item in transformedData" :key="item">
                         <div v-if="Array.isArray(item)" class="group">
-                            <div v-for="(groupItem, groupIndex) in item" :key="groupIndex" class="photo">
+                            <div v-for="(groupItem, groupIndex) in item" :key="groupIndex" class="photo" @click="openPhotoModal">
                                 <picture>
                                     <source
                                         v-for="(alternativeGroupImage, alternativeGroupIndex) in groupItem.formats || []"
@@ -43,7 +43,7 @@
                                 </picture>
                             </div>
                         </div>
-                        <div v-else class="photo">
+                        <div v-else class="photo" @click="openPhotoModal">
                             <picture>
                                 <source
                                     v-for="(alternativeImage, imageIndex) in item.formats"
@@ -53,7 +53,7 @@
                                 />
                                 <img
                                     :src="item.default"
-                                    :alt="`${location} - ${item.author}`"
+                                    :alt="`${data.title} - ${item.author}`"
                                     width="640"
                                     height="360"
                                     loading="lazy"
@@ -69,42 +69,33 @@
 </template>
 
 <script setup lang="ts">
+    import { useModalStore } from '@/stores/ModalStore'
+    import { IPhoto, transformDataToPhotoData } from '@/utils/photoUtils'
+
     const props = defineProps({
         /**
-         * The location title
+         * The location data
          *
-         * @type String
-         * @default null
-         * @name location
-         */
-        location: {
-            type: String,
-            default: null
-        },
-        /**
-         * The location photos
-         *
-         * @type Array
-         * @default []
+         * @type Object
+         * @default {}
          * @name data
          */
         data: {
-            type: Array,
-            default: () => []
+            type: Object as () => IPhoto,
+            default: () => ({})
         }
     })
 
     const { t } = useI18n()
+    const modalStore = useModalStore()
 
-    /**
-     * Computed property to transform the location data into "1 single photo + group of 4 photos"
-     */
     const transformedData = computed(() => {
+        const { photos } = props.data
         const transformed = []
 
-        for (let i = 0; i < props.data.length; i += 5) {
-            const item = props.data[i]
-            const remainingItems = props.data.slice(i + 1)
+        for (let i = 0; i < photos.length; i += 5) {
+            const item = photos[i]
+            const remainingItems = photos.slice(i + 1)
 
             if (remainingItems.length >= 4) {
                 const group = remainingItems.slice(0, 4)
@@ -121,4 +112,9 @@
 
         return transformed
     })
+
+    const openPhotoModal = () => {
+        modalStore.setPhotoVisibility(true)
+        modalStore.setPhotoData(transformDataToPhotoData(props.data))
+    }
 </script>
