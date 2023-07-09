@@ -100,7 +100,7 @@
                         </div>
                         <div v-if="photoDetails.place && photoDetails.coordinates" class="snapshot">
                             <img
-                                :src="`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(%7B%22type%22%3A%22FeatureCollection%22%2C%22features%22%3A%5B%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Point%22%2C%22coordinates%22%3A%5B${photoDetails.coordinates.longitude}%2C${photoDetails.coordinates.latitude}%5D%7D%7D%5D%7D)/${photoDetails.coordinates.longitude},${photoDetails.coordinates.latitude},17.1,0/200x126?access_token=pk.eyJ1IjoieGVuYmciLCJhIjoiY2xkb29ycHl1MHY4ZDNxdDZvNHBoNDF6aSJ9.B5k8gMRorRmRJL28KxVZBw`"
+                                :src="`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(%7B%22type%22%3A%22FeatureCollection%22%2C%22features%22%3A%5B%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Point%22%2C%22coordinates%22%3A%5B${photoDetails.coordinates.longitude}%2C${photoDetails.coordinates.latitude}%5D%7D%7D%5D%7D)/${photoDetails.coordinates.longitude},${photoDetails.coordinates.latitude},17.1,0/200x126?access_token=${mapBoxToken}`"
                                 :alt="photoDetails.place.title"
                             />
                         </div>
@@ -119,6 +119,7 @@
     const localePath = useLocalePath()
     const modalStore = useModalStore()
 
+    const mapBoxToken = import.meta.env.MAPBOX_ACCESS_TOKEN
     const coordinateType = ref('dms')
     const styleElId = 'overlay-related'
     const photoEl = ref(null)
