@@ -9,11 +9,11 @@
         <LocationTop :data="location" />
 
         <div class="sections">
-            <LocationMap :data="location" />
+            <LazyLocationMap :data="location" />
 
             <div class="section-divider"></div>
 
-            <LocationHistory
+            <LazyLocationHistory
                 :data="{
                     content: location.content.html,
                     slug: location.slug,
@@ -24,24 +24,24 @@
 
             <div class="section-divider"></div>
 
-            <LocationPhotos :data="location" />
+            <LazyLocationPhotos :data="location" />
 
             <div class="container">
                 <div class="dual-box">
-                    <LocationFeatures />
+                    <LazyLocationFeatures />
 
-                    <LocationLabels />
+                    <LazyLocationLabels />
                 </div>
             </div>
 
-            <LocationInformation :data="location.information" />
+            <LazyLocationInformation :data="location.information" />
 
-            <LocationReviews :data="location.reviews" :statistics="location.details.rating" />
+            <LazyLocationReviews :data="location.reviews" :statistics="location.details.rating" />
 
-            <LocationNearby />
+            <LazyLocationNearby />
         </div>
 
-        <ModalPhoto v-if="modalStore.photo.visible" />
+        <LazyModalPhoto v-if="modalStore.photo.visible" />
     </main>
 </template>
 
