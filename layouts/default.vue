@@ -73,6 +73,18 @@
         ]
     })
 
+    // If the build is not for a production environment, then make the entire application unable to be crawled and indexed by the search engine bots
+    if (import.meta.env.VITE_APP_ENV !== 'production') {
+        useHead({
+            meta: [
+                {
+                    name: 'robots',
+                    content: 'noindex, follow'
+                }
+            ]
+        })
+    }
+
     useSeoMeta({
         ogImage: `${appUrl}/images/og-image.png`
     })
