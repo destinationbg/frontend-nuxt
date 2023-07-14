@@ -25,41 +25,47 @@
                     <template v-for="item in transformedData" :key="item">
                         <div v-if="Array.isArray(item)" class="group">
                             <div v-for="(groupItem, groupIndex) in item" :key="groupIndex" class="photo" @click="openPhotoModal">
-                                <picture>
-                                    <source
-                                        v-for="(alternativeGroupImage, alternativeGroupIndex) in groupItem.formats || []"
-                                        :key="alternativeGroupIndex"
-                                        :srcset="alternativeGroupImage.image"
-                                        :type="`image/${alternativeGroupImage.type}`"
-                                    />
-                                    <img
-                                        :src="groupItem.default"
-                                        :alt="groupItem.author"
-                                        width="640"
-                                        height="360"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                </picture>
+                                <BasePicture
+                                    :data="{
+                                        image: groupItem.default,
+                                        title: groupItem.author,
+                                        width: 640,
+                                        height: 360,
+                                        decoding: 'async',
+                                        loading: 'lazy'
+                                    }"
+                                >
+                                    <template #source>
+                                        <source
+                                            v-for="(alternativeGroupImage, alternativeGroupIndex) in groupItem.formats || []"
+                                            :key="alternativeGroupIndex"
+                                            :srcset="alternativeGroupImage.image"
+                                            :type="`image/${alternativeGroupImage.type}`"
+                                        />
+                                    </template>
+                                </BasePicture>
                             </div>
                         </div>
                         <div v-else class="photo" @click="openPhotoModal">
-                            <picture>
-                                <source
-                                    v-for="(alternativeImage, imageIndex) in item.formats"
-                                    :key="imageIndex"
-                                    :srcset="alternativeImage.image"
-                                    :type="`image/${alternativeImage.type}`"
-                                />
-                                <img
-                                    :src="item.default"
-                                    :alt="`${data.title} - ${item.author}`"
-                                    width="640"
-                                    height="360"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            </picture>
+                            <BasePicture
+                                :data="{
+                                    image: item.default,
+                                    title: `${data.title} - ${item.author}`,
+                                    width: 640,
+                                    height: 360,
+                                    decoding: 'async',
+                                    loading: 'lazy'
+                                }"
+                            >
+                                <template #source>
+                                    <source
+                                        v-for="(alternativeImage, imageIndex) in item.formats"
+                                        :key="imageIndex"
+                                        :srcset="alternativeImage.image"
+                                        :type="`image/${alternativeImage.type}`"
+                                    />
+                                </template>
+                            </BasePicture>
                         </div>
                     </template>
                 </BaseDraggableCards>

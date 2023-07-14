@@ -5,9 +5,16 @@
                 <span>{{ data.title }}</span>
                 <i class="fi fi-rr-arrow-small-right" />
             </h3>
-            <picture>
-                <img :src="data.image" :alt="data.title" width="100" height="100" loading="lazy" decoding="async" />
-            </picture>
+            <BasePicture
+                :data="{
+                    image: data.image,
+                    title: data.title,
+                    width: 100,
+                    height: 100,
+                    decoding: 'async',
+                    loading: 'lazy'
+                }"
+            />
         </NuxtLink>
     </div>
     <div v-else-if="type === 'alternative'" class="card alternative">
@@ -26,9 +33,16 @@
     <div v-else class="card default">
         <NuxtLink :to="localePath(data.url)" class="box-link">
             <figure>
-                <picture>
-                    <img :src="data.image" :alt="data.title" width="100" height="100" loading="lazy" decoding="async" />
-                </picture>
+                <BasePicture
+                    :data="{
+                        image: data.image,
+                        title: data.title,
+                        width: 100,
+                        height: 100,
+                        decoding: 'async',
+                        loading: 'lazy'
+                    }"
+                />
                 <figcaption>
                     <h3>{{ data.title }}</h3>
                 </figcaption>

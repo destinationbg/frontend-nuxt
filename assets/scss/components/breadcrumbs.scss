@@ -29,6 +29,10 @@
         &:last-child {
             a {
                 color: $blue-700;
+
+                &::after {
+                    border-color: $blue-700;
+                }
             }
         }
     }
@@ -36,11 +40,32 @@
     a {
         @include font-size(22px);
 
+        position: relative;
         color: $slate-700;
         font-weight: 600;
+        transition: all 300ms linear;
 
         &:hover {
-            text-decoration: underline;
+            &::after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            border-width: 0 0 2px;
+            border-style: solid;
+            border-color: $slate-700;
+            opacity: 0;
+            transition: opacity 0.35s, transform 0.35s;
+            transform: scale(0, 1);
         }
     }
 }

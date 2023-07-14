@@ -42,16 +42,16 @@
                     <div class="photo-holder">
                         <div class="photo">
                             <NuxtLink :to="localePath(data.url)">
-                                <picture>
-                                    <img
-                                        :src="data.image"
-                                        :alt="data.title"
-                                        width="360"
-                                        height="640"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                </picture>
+                                <BasePicture
+                                    :data="{
+                                        image: data.image,
+                                        title: data.title,
+                                        width: 360,
+                                        height: 640,
+                                        decoding: 'async',
+                                        loading: 'lazy'
+                                    }"
+                                />
                             </NuxtLink>
                         </div>
                     </div>

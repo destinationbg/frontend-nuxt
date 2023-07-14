@@ -3,16 +3,16 @@
         <div class="container">
             <div class="wrapper">
                 <div class="holder">
-                    <picture>
-                        <img
-                            src="~/assets/images/shevitsa-1.svg"
-                            :alt="t('general.shevitsa.title')"
-                            width="100"
-                            height="100"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    </picture>
+                    <BasePicture
+                        :data="{
+                            image: Shevitsa1,
+                            title: t('general.shevitsa.title'),
+                            width: 100,
+                            height: 100,
+                            decoding: 'async',
+                            loading: 'lazy'
+                        }"
+                    />
                     <div class="tooltip-container center">
                         <div class="tooltip-content">
                             {{ t('general.shevitsa.describe') }}
@@ -25,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+    import Shevitsa1 from '@/assets/images/shevitsa-1.svg'
+
     const { t } = useI18n()
 
     defineProps({

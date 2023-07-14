@@ -101,21 +101,24 @@
                         </div>
 
                         <figure @click="openPhotoModal">
-                            <picture>
-                                <source
-                                    v-for="(alternativeImage, imageIndex) in data.details.photo.formats"
-                                    :key="imageIndex"
-                                    :srcset="alternativeImage.image"
-                                    :type="`image/${alternativeImage.type}`"
-                                />
-                                <img
-                                    :src="data.details.photo.default"
-                                    :alt="data.title"
-                                    width="640"
-                                    height="360"
-                                    decoding="async"
-                                />
-                            </picture>
+                            <BasePicture
+                                :data="{
+                                    image: data.details.photo.default,
+                                    title: data.title,
+                                    width: 640,
+                                    height: 360,
+                                    decoding: 'async'
+                                }"
+                            >
+                                <template #source>
+                                    <source
+                                        v-for="(alternativeImage, imageIndex) in data.details.photo.formats"
+                                        :key="imageIndex"
+                                        :srcset="alternativeImage.image"
+                                        :type="`image/${alternativeImage.type}`"
+                                    />
+                                </template>
+                            </BasePicture>
                             <figcaption>
                                 {{ t('general.photographer', { author: data.details.photo.author.names }) }}
                             </figcaption>
