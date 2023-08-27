@@ -177,6 +177,16 @@
                         }
                     }
 
+                    &.social-figma {
+                        &::after {
+                            background-color: rgba(#f24e1e, 0.15);
+                        }
+
+                        i {
+                            color: #f24e1e;
+                        }
+                    }
+
                     &.social-discord {
                         &::after {
                             background-color: rgba(#5865f2, 0.15);

@@ -18,6 +18,10 @@ const socialNetworks: ISocialNetworks[] = [
         title: 'GitHub'
     },
     {
+        link: import.meta.env.VITE_APP_PROJECT_FIGMA,
+        title: 'Figma'
+    },
+    {
         link: import.meta.env.VITE_APP_PROJECT_DISCORD,
         title: 'Discord'
     }
