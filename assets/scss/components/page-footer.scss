@@ -49,7 +49,7 @@
             }
 
             span {
-                @include font-size(36px);
+                @include font-size(35px);
 
                 color: $slate-900;
                 font-weight: 700;
@@ -80,18 +80,19 @@
             gap: 5px;
             align-items: center;
             justify-content: center;
-            padding: 0 0 30px;
 
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                width: 100px;
-                height: 1px;
-                background-color: $slate-200;
-                transform: translateX(-50%);
-            }
+            // padding: 0 0 30px;
+
+            // &::after {
+            //     content: '';
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 50%;
+            //     width: 100px;
+            //     height: 1px;
+            //     background-color: $slate-200;
+            //     transform: translateX(-50%);
+            // }
 
             i {
                 @include font-size(25px);
@@ -174,6 +175,16 @@
 
                         i {
                             color: #171515;
+                        }
+                    }
+
+                    &.social-figma {
+                        &::after {
+                            background-color: rgba(#f24e1e, 0.15);
+                        }
+
+                        i {
+                            color: #f24e1e;
                         }
                     }
 

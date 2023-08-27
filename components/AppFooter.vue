@@ -32,11 +32,11 @@
                         </a>
                     </li>
                 </ul>
-                <p>
+                <!-- <p>
                     <NuxtLink :to="localePath('/donate')" :title="t('page.donate.title')" class="link">
                         <strong>{{ t('general.footer.donate') }}</strong>
                     </NuxtLink>
-                </p>
+                </p> -->
             </div>
             <div class="bottom">
                 <p v-html="t('general.footer.copyright', { year: currentYear, name: t('meta.appName') })" />
@@ -84,9 +84,9 @@
 <script setup lang="ts">
     import { socialNetworks } from '@/config/social-networks'
 
-    const { t } = useI18n()
+    const { locale, t } = useI18n()
     const localePath = useLocalePath()
 
-    const domain = String(import.meta.env.VITE_APP_DOMAIN)
+    const domain = locale.value === 'bg' ? String(import.meta.env.VITE_APP_DOMAIN_BG) : String(import.meta.env.VITE_APP_DOMAIN_EN)
     const currentYear = new Date().getFullYear()
 </script>

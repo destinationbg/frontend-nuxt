@@ -62,10 +62,10 @@
 </template>
 
 <script setup lang="ts">
-    const { t } = useI18n()
+    const { locale, t } = useI18n()
     const localePath = useLocalePath()
 
-    const domain = String(import.meta.env.VITE_APP_DOMAIN)
+    const domain = locale.value === 'bg' ? String(import.meta.env.VITE_APP_DOMAIN_BG) : String(import.meta.env.VITE_APP_DOMAIN_EN)
     const environment = String(import.meta.env.VITE_APP_ENV)
     const opacity = ref(0)
 

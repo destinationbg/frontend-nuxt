@@ -25,7 +25,6 @@
 
     const { t } = useI18n()
     const appName = t('meta.appName')
-    const domain = String(import.meta.env.VITE_APP_DOMAIN)
     const appUrl = String(import.meta.env.VITE_APP_URL)
 
     const head = useLocaleHead({
@@ -50,7 +49,7 @@
 
     useHead({
         titleTemplate: (titleChunk) => {
-            return titleChunk ? `${titleChunk} - ${appName}` : `${appName} - ${domain}`
+            return titleChunk ? `${titleChunk} - ${appName}` : `${appName} - ${String(import.meta.env.VITE_APP_DOMAIN_EN)}`
         },
         meta: [
             { charset: 'utf-8' },
