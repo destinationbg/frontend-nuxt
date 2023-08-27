@@ -32,11 +32,11 @@
                         </a>
                     </li>
                 </ul>
-                <p>
+                <!-- <p>
                     <NuxtLink :to="localePath('/donate')" :title="t('page.donate.title')" class="link">
                         <strong>{{ t('general.footer.donate') }}</strong>
                     </NuxtLink>
-                </p>
+                </p> -->
             </div>
             <div class="bottom">
                 <p v-html="t('general.footer.copyright', { year: currentYear, name: t('meta.appName') })" />
