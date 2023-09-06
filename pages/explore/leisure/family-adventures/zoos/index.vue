@@ -17,7 +17,7 @@
             <div class="container">
                 <p>
                     List...
-                    <NuxtLink to="/location/rila-monastery">Рилски манастир "Св. Иван Рилски"</NuxtLink>
+                    <NuxtLink :to="localePath('/location/rila-monastery')">Рилски манастир "Св. Иван Рилски"</NuxtLink>
                 </p>
             </div>
         </section>
@@ -26,6 +26,7 @@
 
 <script setup lang="ts">
     const { t } = useI18n()
+    const localePath = useLocalePath()
 
     const breadcrumbs = [
         {
