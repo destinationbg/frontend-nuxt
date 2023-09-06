@@ -13,7 +13,7 @@
 
                 <ul class="locations-list">
                     <li v-for="place in data" :key="place">
-                        <SectionCard type="rectangle-static" :data="place" />
+                        <BaseCard type="rectangle-static" :data="place" />
                     </li>
                 </ul>
             </div>

@@ -33,7 +33,7 @@
                 </template>
                 <template #cards>
                     <BaseDraggableCards :controls="data.controls" :alternative="data.alternative" class="sub-categories">
-                        <SectionCard
+                        <BaseCard
                             v-for="(category, categoryIndex) in data.subcategories"
                             :key="categoryIndex"
                             :data="category"

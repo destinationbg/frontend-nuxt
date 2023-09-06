@@ -37,7 +37,12 @@
                 </template>
                 <template #cards>
                     <BaseDraggableCards class="sub-categories">
-                        <SectionCard v-for="(activity, activityIndex) in data.activities" :key="activityIndex" :data="activity" />
+                        <BaseCard
+                            v-for="(activity, activityIndex) in data.activities"
+                            :key="activityIndex"
+                            :data="activity"
+                            type="default"
+                        />
                     </BaseDraggableCards>
                 </template>
                 <template v-if="index + 1 !== subcategories.length" #shevitsa>
