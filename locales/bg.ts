@@ -29,6 +29,8 @@ export default {
             total: '{reviews} отзива'
         },
         altitude: '{meters} м. н.в.',
+        meters: '{count} м',
+        kilometers: '{count} км',
         map: {
             coordinates: 'GPS координати'
         },

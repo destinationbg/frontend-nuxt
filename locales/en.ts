@@ -29,6 +29,8 @@ export default {
             total: '{reviews} reviews total'
         },
         altitude: '{meters} m above sea level',
+        meters: '{count} m',
+        kilometers: '{count} km',
         map: {
             coordinates: 'GPS Coordinates'
         },
