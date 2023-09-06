@@ -1,8 +1,18 @@
 .location-nearby {
     .wrapper {
         display: flex;
-        gap: 20px;
-        justify-content: flex-start;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .locations-list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 30px;
+
+        li {
+            position: relative;
+        }
     }
 }
 

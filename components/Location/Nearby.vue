@@ -10,6 +10,12 @@
                         <h2>{{ t('page.location.section.nearby.title') }}</h2>
                     </template>
                 </SectionHeading>
+
+                <ul class="locations-list">
+                    <li v-for="place in data" :key="place">
+                        <SectionCard type="rectangle-static" :data="place" />
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
