@@ -18,14 +18,15 @@
         </NuxtLink>
     </div>
     <div v-else-if="type === 'rectangle-static'" class="card rectangle-static">
-        <NuxtLink :to="localePath(data.url)">
+        <NuxtLink :to="localePath('/location/' + data.slug)">
             <div class="picture-container">
                 <div class="badges">
-                    <div class="stars">
+                    <div v-if="data.user_score" class="stars">
                         <i class="fi fi-rr-star" />
                         <span>{{ data.user_score.toFixed(1) }}</span>
                     </div>
-                    <div class="distance">
+
+                    <div v-if="data.distance" class="distance">
                         <i class="fi fi-rr-route"></i>
                         <span>{{ useDistance(data.distance) }}</span>
                     </div>

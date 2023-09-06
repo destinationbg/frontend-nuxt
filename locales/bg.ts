@@ -28,6 +28,7 @@ export default {
             reviews: '{rating} от {reviews} отзива',
             total: '{reviews} отзива'
         },
+        locations: 'Локации',
         altitude: '{meters} м. н.в.',
         meters: '{count} м',
         kilometers: '{count} км',
