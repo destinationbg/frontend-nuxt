@@ -64,7 +64,9 @@
             border-style: solid;
             border-color: $slate-700;
             opacity: 0;
-            transition: opacity 0.35s, transform 0.35s;
+            transition:
+                opacity 0.35s,
+                transform 0.35s;
             transform: scale(0, 1);
         }
     }

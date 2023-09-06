@@ -28,7 +28,10 @@ export default {
             reviews: '{rating} from {reviews} reviews',
             total: '{reviews} reviews total'
         },
+        locations: 'Locations',
         altitude: '{meters} m above sea level',
+        meters: '{count} m',
+        kilometers: '{count} km',
         map: {
             coordinates: 'GPS Coordinates'
         },

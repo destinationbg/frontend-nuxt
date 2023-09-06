@@ -1,0 +1,28 @@
+.badge {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $slate-200;
+    border-radius: 24px;
+    background-color: $slate-50;
+
+    i {
+        @include font-size(16px);
+
+        display: block;
+        width: 16px;
+        height: 16px;
+        color: $lime-600;
+    }
+
+    span {
+        @include font-size(18px);
+
+        color: $slate-700;
+    }
+}
+
+@import 'responsive/badge';

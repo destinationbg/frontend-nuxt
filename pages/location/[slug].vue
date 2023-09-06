@@ -28,9 +28,9 @@
 
             <div class="container">
                 <div class="dual-box">
-                    <LazyLocationFeatures />
+                    <LazyLocationFeatures :data="location.features" />
 
-                    <LazyLocationLabels />
+                    <LazyLocationLabels :data="location.labels" />
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
 
             <LazyLocationReviews :data="location.reviews" :statistics="location.details.rating" />
 
-            <LazyLocationNearby />
+            <LazyLocationNearby :data="location.nearby" />
         </div>
 
         <LazyModalPhoto v-if="modalStore.photo.visible" />
@@ -75,6 +75,10 @@
     import photoJpg_7 from '@/assets/images/placeholders/locations/rila-monastery-7.jpg'
     import photoWebP_7 from '@/assets/images/placeholders/locations/rila-monastery-7.webp'
     import photoAVIF_7 from '@/assets/images/placeholders/locations/rila-monastery-7.avif'
+
+    import photoAVIF_8 from '@/assets/images/placeholders/locations/shipka-monument-1.avif'
+
+    import photoAVIF_9 from '@/assets/images/placeholders/locations/tsarevets-1.avif'
 
     import mapPlaceholder from '@/assets/images/placeholders/locations/map-placeholder.avif'
 
@@ -179,6 +183,8 @@
             contacts:
                 '<strong>Телефон:</strong><br /><a href="tel:+35970542208">+359 70 54 2208</a><br /><br /><strong>Имейл адрес:</strong><br /><a href="mailto:info@rilskimanastir.org">info@rilskimanastir.org</a><br /><br /><strong>Уебсайт:</strong><br /><a href="http://rilskimanastir.org/" target="_blank" rel="noopener">http://rilskimanastir.org/</a>'
         },
+        features: ['Подходящо за деца', 'Стръмен терен', 'Наличен паркинг'],
+        labels: ['Религия', 'Православни манастири и параклиси', 'В списъка на ЮНЕСКО за световно стопанство'],
         photos: [
             {
                 default: photoJpg_1,
@@ -346,6 +352,24 @@
                 date_added: 1685017043000,
                 comment:
                     'Бях изумена от историята и красотата на Рилския манастир. Отбранителните стени и кули предлагаха страхотна гледка към околния пейзаж. Това определено беше един от акцентите в пътуването ми до България.'
+            }
+        ],
+        nearby: [
+            {
+                slug: 'shipka-monument',
+                title: 'Паметник на свободата "Шипка"',
+                user_score: 4.2,
+                distance: 340000,
+                location: 'до град Шипка',
+                image: photoAVIF_8
+            },
+            {
+                slug: 'tsarevets',
+                title: 'Крепост "Царевец"',
+                user_score: 4.6,
+                distance: 342000,
+                location: 'град Велико Търново',
+                image: photoAVIF_9
             }
         ]
     }

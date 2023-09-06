@@ -95,7 +95,9 @@
             padding: 30px;
             border-radius: 12px;
             background-color: $white;
-            box-shadow: rgba($black, 10%) 0 4px 6px -1px, rgba($black, 6%) 0 2px 4px -1px;
+            box-shadow:
+                rgba($black, 10%) 0 4px 6px -1px,
+                rgba($black, 6%) 0 2px 4px -1px;
             break-inside: avoid;
         }
 

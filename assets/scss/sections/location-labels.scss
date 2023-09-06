@@ -4,6 +4,14 @@
         flex-direction: column;
         gap: 30px;
     }
+
+    .labels-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 }
 
 @import 'responsive/location-labels';

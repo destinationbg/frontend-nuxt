@@ -23,10 +23,10 @@
                 </template>
                 <template v-if="data.locations" #grid>
                     <div class="grid">
-                        <SectionCard
+                        <BaseCard
                             v-for="(category, categoryIndex) in data.locations"
                             :key="categoryIndex"
-                            type="rectangle"
+                            type="rectangle-flexible"
                             :data="category"
                         />
                     </div>

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="type === 'rectangle'" class="card rectangle">
+    <div v-if="type === 'rectangle-flexible'" class="card rectangle-flexible">
         <NuxtLink :to="localePath(data.url)">
             <h3>
                 <span>{{ data.title }}</span>
@@ -15,6 +15,42 @@
                     loading: 'lazy'
                 }"
             />
+        </NuxtLink>
+    </div>
+    <div v-else-if="type === 'rectangle-static'" class="card rectangle-static">
+        <NuxtLink :to="localePath('/location/' + data.slug)">
+            <div class="picture-container">
+                <div class="badges">
+                    <div v-if="data.user_score" class="stars">
+                        <i class="fi fi-rr-star" />
+                        <span>{{ data.user_score.toFixed(1) }}</span>
+                    </div>
+
+                    <div v-if="data.distance" class="distance">
+                        <i class="fi fi-rr-route"></i>
+                        <span>{{ useDistance(data.distance) }}</span>
+                    </div>
+                </div>
+
+                <BasePicture
+                    :data="{
+                        image: data.image,
+                        title: data.title,
+                        width: 360,
+                        height: 640,
+                        decoding: 'async',
+                        loading: 'lazy'
+                    }"
+                />
+            </div>
+
+            <div class="details-container">
+                <h3>{{ data.title }}</h3>
+                <p>
+                    <i class="fi fi-rr-marker"></i>
+                    <span>{{ data.location }}</span>
+                </p>
+            </div>
         </NuxtLink>
     </div>
     <div v-else-if="type === 'alternative'" class="card alternative">
@@ -55,6 +91,8 @@
 </template>
 
 <script setup lang="ts">
+    import { useDistance } from '@/composables/useDistance'
+
     const localePath = useLocalePath()
 
     defineProps({
@@ -80,7 +118,7 @@
             type: String,
             default: 'default',
             validator: (value: string) => {
-                return ['default', 'alternative', 'rectangle'].includes(value)
+                return ['default', 'alternative', 'rectangle-flexible', 'rectangle-static'].includes(value)
             }
         }
     })

@@ -92,7 +92,7 @@
         {
             type: 'button',
             name: 'menu',
-            icon: 'fi-rr-menu-burger'
+            icon: 'fi-rr-bars-staggered'
         }
     ]
 
