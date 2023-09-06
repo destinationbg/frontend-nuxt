@@ -95,7 +95,7 @@
 
 // For custom screen size purpose
 @mixin screen-custom($bp) {
-    @media only screen and (width <= bp) {
+    @media only screen and (width <= $bp) {
         @content;
     }
 }
