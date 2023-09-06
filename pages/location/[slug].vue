@@ -28,9 +28,9 @@
 
             <div class="container">
                 <div class="dual-box">
-                    <LazyLocationFeatures />
+                    <LazyLocationFeatures :data="location.features" />
 
-                    <LazyLocationLabels />
+                    <LazyLocationLabels :data="location.labels" />
                 </div>
             </div>
 
@@ -183,6 +183,8 @@
             contacts:
                 '<strong>Телефон:</strong><br /><a href="tel:+35970542208">+359 70 54 2208</a><br /><br /><strong>Имейл адрес:</strong><br /><a href="mailto:info@rilskimanastir.org">info@rilskimanastir.org</a><br /><br /><strong>Уебсайт:</strong><br /><a href="http://rilskimanastir.org/" target="_blank" rel="noopener">http://rilskimanastir.org/</a>'
         },
+        features: ['Подходящо за деца', 'Стръмен терен', 'Наличен паркинг'],
+        labels: ['Религия', 'Православни манастири и параклиси', 'В списъка на ЮНЕСКО за световно стопанство'],
         photos: [
             {
                 default: photoJpg_1,

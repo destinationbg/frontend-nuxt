@@ -9,6 +9,12 @@
                     <h2>{{ t('page.location.section.labels.title') }}</h2>
                 </template>
             </SectionHeading>
+
+            <ul class="labels-list">
+                <li v-for="(feature, index) in data" :key="index" class="badge">
+                    <span>{{ feature }}</span>
+                </li>
+            </ul>
         </div>
     </section>
 </template>
