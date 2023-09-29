@@ -67,27 +67,30 @@
     const sectionRef = ref(null)
     const repositoryUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
-    }/tree/main/locations/${props.data.slug}`
+    }/tree/main/6.locations/${props.data.slug}`
     const contributingUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
     }/blob/main/.github/CONTRIBUTING.md`
     const showFullContent = ref(false)
 
     const truncatedContent = computed(() => {
-        const moreIndex = props.data.content.indexOf('<!-- more -->')
+        const { replaceLinks } = useContentLinkHandler()
+        const replacedContent = replaceLinks(props.data.content)
 
-        if (showFullContent.value) {
-            return props.data.content
-        } else {
-            return moreIndex !== -1 ? props.data.content.slice(0, moreIndex) : props.content
+        if (replacedContent.includes('<!-- more -->')) {
+            const moreIndex = replacedContent.indexOf('<!-- more -->')
+
+            if (!showFullContent.value) {
+                return moreIndex !== -1 ? replacedContent.slice(0, moreIndex) : replacedContent
+            }
         }
+
+        return replacedContent
     })
 
     const showButton = computed(() => props.data.content.includes('<!-- more -->'))
 
     const toggleContent = () => {
-        showFullContent.value = !showFullContent.value
-
         const offset = 150
         const targetPosition = sectionRef.value.getBoundingClientRect().top + window.pageYOffset - offset
 
@@ -97,6 +100,8 @@
                 behavior: 'smooth'
             })
         }, 150)
+
+        showFullContent.value = !showFullContent.value
     }
 
     onKeyStroke('Escape', () => {
