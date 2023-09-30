@@ -45,7 +45,9 @@
         font-weight: 600;
         transition: all 300ms linear;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             &::after {
                 opacity: 1;
                 transform: scale(1);

@@ -98,6 +98,8 @@
     p {
         @include font-size(24px);
 
+        display: flex;
+        flex-direction: column;
         color: $slate-700;
         line-height: 1.4;
         text-align: center;

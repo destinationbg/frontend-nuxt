@@ -81,8 +81,6 @@
     })
 
     const toggleMap = () => {
-        mapShown.value = !mapShown.value
-
         const offset = 150
         const targetPosition = sectionRef.value.getBoundingClientRect().top + window.pageYOffset - offset
 
@@ -92,6 +90,8 @@
                 behavior: 'smooth'
             })
         }, 150)
+
+        mapShown.value = !mapShown.value
     }
 
     onKeyStroke('Escape', () => {

@@ -70,9 +70,12 @@
 
         a {
             color: $blue-600;
+            text-decoration: underline;
             transition: all 300ms linear;
 
-            &:hover {
+            &:hover,
+            &:focus,
+            &:active {
                 color: $blue-700;
             }
         }
