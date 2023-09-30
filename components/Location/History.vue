@@ -63,11 +63,11 @@
         }
     })
 
-    const { t } = useI18n()
+    const { locale, t } = useI18n()
     const sectionRef = ref(null)
     const repositoryUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
-    }/tree/main/6.locations/${props.data.slug}`
+    }/tree/main/6.locations/${props.data.slug}/contents/${locale.value}/content.md`
     const contributingUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
     }/blob/main/.github/CONTRIBUTING.md`
