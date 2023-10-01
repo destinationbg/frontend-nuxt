@@ -100,12 +100,15 @@
 
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
         color: $slate-700;
         line-height: 1.4;
-        text-align: center;
+        text-align: left;
     }
 
     a {
+        display: contents;
         color: $blue-600;
         text-decoration: underline;
         transition: all 200ms linear;
@@ -113,6 +116,14 @@
         &:hover {
             color: $blue-700;
         }
+    }
+
+    hr {
+        width: 100%;
+        margin: 0;
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: $slate-200;
     }
 
     .report {
