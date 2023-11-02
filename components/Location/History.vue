@@ -49,6 +49,8 @@
 </template>
 
 <script setup lang="ts">
+    import { useContentLinkHandler } from '@/composables/useContentLinkHandler'
+
     const props = defineProps({
         /**
          * The location data
@@ -67,7 +69,7 @@
     const sectionRef = ref(null)
     const repositoryUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
-    }/tree/main/6.locations/${props.data.slug}/contents/${locale.value}/content.md`
+    }/tree/main/6.locations/${props.data.slug}/data/${locale.value}/content/full.md`
     const contributingUrl = `https://github.com/${import.meta.env.VITE_GITHUB_ORGANIZATION}/${
         import.meta.env.VITE_GITHUB_REPO_CONTENTS
     }/blob/main/.github/CONTRIBUTING.md`
